@@ -1,0 +1,44 @@
+{
+	"dataTypes": [
+		{
+			"id": "audio",
+			"name": "Audio",
+			"specs": [
+				"Stereo",
+				"Left Channel",
+				"Right Channel",
+				"Mono",
+				"Dual Mono",
+				"Line Level",
+				"Instrument Level",
+				"Headphones Level",
+				"Microphone Level"
+			]
+		},
+		{
+			"id": "cv",
+			"name": "Control Voltage",
+			"specs": [
+				"Clock",
+				"Reset",
+				"Gate",
+				"V-Trigger",
+				"S-Trigger",
+				"Pitch Hz/V",
+				"Pitch V/Oct",
+				"Modulation"
+			]
+		},
+		{
+			"id": "midi",
+			"name": "MIDI",
+			"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
+		},
+		{
+			"id": "power",
+			"name": "Power",
+			"specs": ["Power", "DC", "AC", "Low Voltage", "Mains Voltage"]
+		},
+		{ "id": "sync", "name": "Sync", "specs": ["DIN Sync"] }
+	]
+}
