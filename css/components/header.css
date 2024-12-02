@@ -24,7 +24,8 @@
 		a {
 			color: var(--color-tertiary);
 			display: inline-block;
-			padding: var(--content-padding);
+			padding-block: var(--content-padding);
+			padding-inline: calc(2 * var(--content-padding));
 			text-decoration: none;
 			transition: all var(--duration) ease-in-out;
 

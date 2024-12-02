@@ -1,0 +1,23 @@
+.site-footer {
+	display: flex;
+	font-size: var(--font-size-1);
+	gap: var(--content-padding);
+	justify-content: flex-end;
+
+	a {
+		align-items: center;
+		color: inherit;
+		display: flex;
+		gap: calc(0.5 * var(--content-padding));
+		margin: calc(-1 * var(--content-padding));
+		padding-block: var(--content-padding);
+		padding-inline: calc(2 * var(--content-padding));
+		text-decoration: none;
+		transition: all var(--duration) ease-in-out;
+
+		&:hover {
+			background-color: var(--text-color);
+			color: var(--body-background);
+		}
+	}
+}
