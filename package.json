@@ -13,12 +13,15 @@
 		"@animxyz/react": "^0.6.7",
 		"@tanstack/react-query": "^5.62.0",
 		"@xyflow/react": "^12.3.5",
+		"clsx": "^2.1.1",
 		"dexie": "^4.0.10",
 		"dexie-react-hooks": "^1.1.7",
 		"open-props": "^1.7.7",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"redaxios": "^0.5.1"
+		"react-loader-spinner": "^6.1.6",
+		"redaxios": "^0.5.1",
+		"wouter": "^3.3.5"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.15.0",
