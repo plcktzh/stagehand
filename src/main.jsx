@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Stagehand from './components/Stagehand';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-			<header className="site-header content-padding">Header</header>
+			<Header />
 			<main className="site-content content-padding">
-				<h1>React-Projekt 👩🏻‍💻</h1>
+				<Stagehand />
 			</main>
-			<footer className="site-footer content-padding">Footer</footer>
+			<Footer />
 	</React.StrictMode>
 );
