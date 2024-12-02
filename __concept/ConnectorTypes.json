@@ -1,0 +1,74 @@
+{
+	"connectorTypes": [
+		{
+			"id": "din_5pin",
+			"name": "DIN 5-pin",
+			"data": ["audio", "midi", "sync"],
+			"type": "DIN",
+			"subtype": ["5-pin"]
+		},
+		{
+			"id": "jack_quarterinch_trs",
+			"name": "1/4 Inch Jack TRS",
+			"data": ["audio", "cv", "sync"],
+			"type": "Jack",
+			"subtype": ["Quarter Inch", "TRS"]
+		},
+		{
+			"id": "jack_eighthinch_trs",
+			"name": "1/8 Inch Jack TRS",
+			"data": ["audio", "cv", "sync"],
+			"type": "Jack",
+			"subtype": ["Eighth Inch", "TRS"]
+		},
+		{
+			"id": "jack_quarterinch_ts",
+			"name": "1/4 Inch Jack TS",
+			"data": ["audio", "cv", "sync"],
+			"type": "Jack",
+			"subtype": ["Quarter Inch", "TS"]
+		},
+		{
+			"id": "jack_eighthinch_ts",
+			"name": "1/8 Inch Jack TS",
+			"data": ["audio", "cv", "sync"],
+			"type": "Jack",
+			"subtype": ["Eighth Inch", "TS"]
+		},
+		{
+			"id": "jack_eighthinch_trrs",
+			"name": "1/8 Inch Jack TRRS",
+			"data": ["audio"],
+			"type": "Jack",
+			"subtype": ["Eighth Inch", "TRRS"]
+		},
+		{
+			"id": "usb_b",
+			"name": "USB Type B",
+			"data": ["audio", "midi", "power"],
+			"type": "USB",
+			"subtype": ["B"]
+		},
+		{
+			"id": "usb_mini",
+			"name": "USB Mini B",
+			"data": ["audio", "midi", "power"],
+			"type": "USB",
+			"subtype": ["Mini", "B"]
+		},
+		{
+			"id": "usb_micro",
+			"name": "USB Micro B",
+			"data": ["audio", "midi", "power"],
+			"type": "USB",
+			"subtype": ["Micro", "B"]
+		},
+		{
+			"id": "usb_c",
+			"name": "USB C",
+			"data": ["audio", "midi", "power"],
+			"type": "USB",
+			"subtype": ["C"]
+		}
+	]
+}
