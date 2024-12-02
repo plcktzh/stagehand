@@ -1,38 +1,37 @@
 import { Fragment, useEffect, useState } from 'react';
 import { initDb } from '../services/db';
-import { ThreeDots } from 'react-loader-spinner';
 import { Route } from 'wouter';
 import Home from './pages/Home';
 import Setups from './pages/Setups';
 import Devices from './pages/Devices';
 import ConnectorTypes from './pages/ConnectorTypes';
 import DataTypes from './pages/DataTypes';
+import Spinner from './layout/Spinner';
+import ErrorMessage from './layout/ErrorMessage';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Stagehand() {
-	const [dbInitialized, setDbInitialized] = useState(false);
+	const {
+		data: dbInitialized = false,
+		isError,
+		isPending,
+		isSuccess,
+		error,
+	} = useQuery({ queryKey: [], queryFn: initDb });
 
-	useEffect(() => {
-		(async () => {
-			setDbInitialized(await initDb());
-		})();
-	}, [dbInitialized, setDbInitialized]);
-
-	return dbInitialized ? (
+	return (
 		<Fragment>
-			<Route path="/" component={Home} />
-			<Route path="/setups" component={Setups} />
-			<Route path="/devices" component={Devices} />
-			<Route path="/connector-types" component={ConnectorTypes} />
-			<Route path="/data-types" component={DataTypes} />
+			{isPending && <Spinner />}
+			{isError && <ErrorMessage error={error} />}
+			{isSuccess && (
+				<Fragment>
+					<Route path="/" component={Home} />
+					<Route path="/setups" component={Setups} />
+					<Route path="/devices" component={Devices} />
+					<Route path="/connector-types" component={ConnectorTypes} />
+					<Route path="/data-types" component={DataTypes} />
+				</Fragment>
+			)}
 		</Fragment>
-	) : (
-		<ThreeDots
-			visible={true}
-			width="60"
-			height="30"
-			color="#131313"
-			ariaLabel="three-dots-loading"
-			wrapperClass="spinner"
-		/>
 	);
 }

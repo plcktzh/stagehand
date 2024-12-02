@@ -1,4 +1,5 @@
 /* Komponenten */
-@import 'spinner';
 @import 'header';
 @import 'footer';
+@import 'spinner';
+@import 'error-message';

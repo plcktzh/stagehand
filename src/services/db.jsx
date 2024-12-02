@@ -1,6 +1,8 @@
 import Dexie from 'dexie';
 
 export const db = new Dexie('stagehand');
+
+// Initialize database tables
 db.version(1).stores({
 	connectorTypes: `id, name, data, type, subtype`,
 	dataTypes: `id, name, specs`,
@@ -11,7 +13,6 @@ export const initDb = async () => {
 	if (window.localStorage.getItem('dbInitialized') === 'true') return true;
 	else {
 		// Setup basic data for connector and data types - this will likely remain static
-
 		const connectorTypesJson = await (
 			await fetch('/data/ConnectorTypes.json')
 		).json();
@@ -28,4 +29,10 @@ export const initDb = async () => {
 		window.localStorage.setItem('dbInitialized', 'true');
 		return true;
 	}
+};
+
+export const fetchAllAsArray = async ({ queryKey }) => {
+	const data = await db.table(queryKey[0]).toArray();
+
+	return data;
 };

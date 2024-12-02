@@ -7,13 +7,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	/*  https://ishadeed.com/article/new-viewport-units/ */
-	min-height: 100dvh;
+	height: 100dvh;
 	background-color: var(--background-color);
 }
 
 .site-content {
 	flex-grow: 1;
 	margin-inline: auto;
+	overflow-y: auto;
 	width: 100%;
 }
 

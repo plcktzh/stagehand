@@ -1,0 +1,18 @@
+.site-content:has(.error-message) {
+	color: var(--warn-color);
+	display: flex;
+	align-items: stretch;
+}
+
+.error-message {
+	align-items: center;
+	display: flex;
+	gap: var(--space-m);
+	justify-content: center;
+	width: 100%;
+
+	svg {
+		height: 10dvh;
+		width: auto;
+	}
+}
