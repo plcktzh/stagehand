@@ -6,6 +6,12 @@
 	/* Hier eigene Farben definieren oder Farben von OpenProps nehmen.
 	https://open-props.style/#colors
 	*/
+	--color-paper: #f0f0f0;
+	--color-offblack: #131313;
+	--color-primary: #76280b;
+	--color-secondary: #264206;
+	--color-tertiary: #309675;
+
 	--red: var(--red-8);
 	--green: var(--lime-10);
 	--blue: var(--indigo-11);
@@ -15,24 +21,32 @@
 	--off-white: var(--gray-1);
 	--off-black: var(--gray-11);
 	/*  Variablennamen zum Beschreiben der Funktion */
-	--body-background: var(--off-white);
+	--body-background: var(--color-paper);
 
-	--text-color: var(--off-black);
-	--heading-color: var(--blue);
-	--link-color: var(--pink);
-	--link-color-active: var(--blue);
+	--text-color: var(--color-offblack);
+	--heading-color: var(--color-primary);
+	--link-color: var(--color-secondary);
+	--link-color-active: var(--color-tertiary);
 	/* --nav-link-color: var();
 	--nav-active-link-color: var();*/
-	--button-color: var(--off-white);
-	--button-background-color: var(--blue);
-	--button-border-color: var(--blue);
-	--header-footer-background-color: var(--blue);
-	--header-footer-color: var(--off-white);
+	--button-color: var(--color-paper);
+	--button-background-color: var(--color-offblack);
+	--button-border-color: var(--color-offblack);
+	--header-footer-background-color: var(--gray-3);
+	--header-footer-color: var(--color-offblack);
 
 	--ok-color: var(--green);
 	--warn-color: var(--red);
 
 	@media (prefers-color-scheme: dark) {
+		--body-background: var(--color-offblack);
+		--text-color: var(--color-paper);
+		--link-color: var(--color-tertiary);
+		--button-color: var(--color-offblack);
+		--button-background-color: var(--color-paper);
+		--button-border-color: var(--color-paper)
+		--header-footer-background-color: var(--gray-9);
+		--header-footer-color: var(--color-paper);
 	}
 }
 

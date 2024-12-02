@@ -13,7 +13,6 @@ body {
 
 .site-content {
 	flex-grow: 1;
-	max-width: var(--max-width-m);
 	margin-inline: auto;
 	width: 100%;
 }
@@ -22,12 +21,12 @@ body {
 .site-footer {
 	color: var(--header-footer-color);
 	background-color: var(--header-footer-background-color);
-	padding-block: var(--content-padding);
 }
 
 /* Hilfsklassen für einheitliches Layout. */
 
 .content-padding {
+	padding-block: var(--content-padding);
 	padding-inline: var(--content-padding);
 }
 

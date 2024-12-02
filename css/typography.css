@@ -1,7 +1,7 @@
 :root {
 	/* https://open-props.style/#typography */
-	--heading-font: var(--font-mono);
-	--body-font: var(--font-sans);
+	--body-font: 'Sofia Sans', var(--font-system-ui);
+	--heading-font: var(--body-font);
 }
 
 /* 
