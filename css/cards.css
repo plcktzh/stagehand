@@ -51,11 +51,15 @@
 	margin-block-start: 0;
 }
 
-details summary::marker {
+.card details summary {
+	cursor: pointer;
+}
+
+.card details summary::marker {
 	color: var(--color-primary);
 }
 
-details summary .card__content__header {
+.card details summary .card__content__header {
 	display: inline-block;
 }
 
