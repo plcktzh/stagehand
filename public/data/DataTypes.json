@@ -9,6 +9,7 @@
 				"Right Channel",
 				"Mono",
 				"Dual Mono",
+				"Multichannel",
 				"Line Level",
 				"Instrument Level",
 				"Headphones Level",
@@ -26,7 +27,9 @@
 				"S-Trigger",
 				"Pitch Hz/V",
 				"Pitch V/Oct",
-				"Modulation"
+				"Modulation",
+				"Expression",
+				"Sustain"
 			]
 		},
 		{

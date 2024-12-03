@@ -8,6 +8,27 @@
 			"subtype": ["5-pin"]
 		},
 		{
+			"id": "rca",
+			"name": "RCA",
+			"data": ["audio"],
+			"type": "RCA",
+			"subtype": []
+		},
+		{
+			"id": "xlr_3pin",
+			"name": "XLR 3-pin",
+			"data": ["audio"],
+			"type": "XLR",
+			"subtype": ["3-pin"]
+		},
+		{
+			"id": "xlr_quarterjack_combo",
+			"name": "XLR 3-pin / 1/4 Inch Jack TRS Combo",
+			"data": ["audio"],
+			"type": ["XLR", "Jack"],
+			"subtype": ["3-pin", "Quarter Inch", "TRS"]
+		},
+		{
 			"id": "jack_quarterinch_trs",
 			"name": "1/4 Inch Jack TRS",
 			"data": ["audio", "cv", "sync"],
