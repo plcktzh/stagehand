@@ -130,3 +130,9 @@ html {
 		hanging-punctuation: none;
 	}
 }
+
+.page-title {
+	font-size: var(--size-fluid-4);
+	margin-block-end: var(--space-m);
+	margin-block-start: var(--space-xs);
+}

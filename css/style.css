@@ -3,6 +3,7 @@
 @import 'queries';
 @import 'globals';
 @import 'layout';
+@import 'cards'; /* General card-like component styles */
 @import 'navigation';
 @import 'typography';
 @import 'components';

@@ -1,0 +1,23 @@
+/* DataTypes */
+.data-types__specs {
+	list-style: none;
+	margin: 0;
+	padding-inline: 0;
+
+	.data-types__specs__item {
+		background-color: var(--gray-4);
+		border-radius: var(--radius-2);
+		color: var(--text-color);
+		display: inline-block;
+		padding: calc(0.5 * var(--content-padding)) var(--content-padding);
+		margin-block-end: var(--content-padding);
+		margin-inline-end: var(--content-padding);
+
+		&.data-types__specs__item--highlight {
+			background-color: transparent;
+			border: 1px solid var(--gray-4);
+			color: var(--text-color);
+			font-weight: 700;
+		}
+	}
+}

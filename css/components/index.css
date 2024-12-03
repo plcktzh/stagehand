@@ -1,5 +1,13 @@
-/* Komponenten */
+/* Basic scaffolding */
 @import 'header';
 @import 'footer';
+
+/* Utilities */
 @import 'spinner';
 @import 'error-message';
+
+/* Pages */
+/* @import 'setups'; */
+/* @import 'devices'; */
+/* @import 'connector-types'; */
+@import 'data-types';

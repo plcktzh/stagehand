@@ -1,4 +1,4 @@
-.site-content:has(.error-message) {
+.site-content div:has(.error-message) {
 	color: var(--warn-color);
 	display: flex;
 	align-items: stretch;

@@ -17,7 +17,7 @@ export default function Stagehand() {
 		isPending,
 		isSuccess,
 		error,
-	} = useQuery({ queryKey: [], queryFn: initDb });
+	} = useQuery({ queryKey: ['init'], queryFn: initDb });
 
 	return (
 		<Fragment>

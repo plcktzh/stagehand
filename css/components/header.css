@@ -4,7 +4,7 @@
 }
 
 .site-title {
-	background-color: var(--color-offblack);
+	background-color: var(--color-tertiary);
 	color: var(--color-paper);
 	margin: calc(-1 * var(--content-padding));
 	padding-block: var(--content-padding);
@@ -22,7 +22,7 @@
 		padding: 0;
 
 		a {
-			color: var(--color-tertiary);
+			color: var(--color-paper);
 			display: inline-block;
 			padding-block: var(--content-padding);
 			padding-inline: calc(2 * var(--content-padding));
@@ -30,13 +30,13 @@
 			transition: all var(--duration) ease-in-out;
 
 			&:hover {
-				background-color: var(--color-tertiary);
-				color: var(--color-paper);
+				background-color: var(--gray-4);
+				color: var(--color-tertiary);
 			}
 
 			&.is-active,
 			&.is-active:hover {
-				background-color: transparent;
+				background-color: var(--color-paper);
 				color: var(--color-offblack);
 			}
 		}

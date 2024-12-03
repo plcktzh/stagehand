@@ -18,6 +18,10 @@ body {
 	width: 100%;
 }
 
+.site-content > div {
+	width: 100%;
+}
+
 .site-header,
 .site-footer {
 	color: var(--header-footer-color);
