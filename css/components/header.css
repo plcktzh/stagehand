@@ -30,8 +30,7 @@
 			transition: all var(--duration) ease-in-out;
 
 			&:hover {
-				background-color: var(--gray-4);
-				color: var(--color-tertiary);
+				background-color: var(--gray-7);
 			}
 
 			&.is-active,

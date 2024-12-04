@@ -35,6 +35,7 @@
 	font-weight: 700;
 	justify-content: space-between;
 	margin: 0;
+	max-width: none !important;
 	padding: var(--content-padding);
 }
 
@@ -47,7 +48,8 @@
 	margin: 0 0 var(--content-padding);
 }
 
-.card__content__header + p {
+.card__content__header + p,
+.card__content p:first-child {
 	margin-block-start: 0;
 }
 

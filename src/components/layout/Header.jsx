@@ -29,6 +29,14 @@ export default function Header() {
 					</li>
 					<li>
 						<Link
+							href="/device-categories"
+							className={(active) => (active ? 'is-active' : '')}
+						>
+							Device Categories
+						</Link>
+					</li>
+					<li>
+						<Link
 							href="/connector-types"
 							className={(active) => (active ? 'is-active' : '')}
 						>

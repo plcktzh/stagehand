@@ -1,49 +1,43 @@
 import { useQuery } from '@tanstack/react-query';
-import { db, fetchAllAsArray } from '../../services/db';
+import { fetchAllAsArray } from '../../services/db';
 import Spinner from '../layout/Spinner';
-import { Fragment } from 'react';
 import ErrorMessage from '../layout/ErrorMessage';
+import { Fragment } from 'react';
 import { Pencil, PlusSquare } from '@phosphor-icons/react';
 
-export default function DataTypes() {
+export default function DeviceCategories() {
 	const {
-		data: dataTypes = [],
+		data: deviceCategories = [],
 		isError,
 		isPending,
 		isSuccess,
 		error,
 	} = useQuery({
-		queryKey: ['dataTypes'],
+		queryKey: ['deviceCategories'],
 		queryFn: fetchAllAsArray,
 	});
 
 	return (
-		<div className="data-types">
+		<div className="device-categories">
 			{isPending && <Spinner />}
 			{isError && <ErrorMessage error={error} />}
 			{isSuccess && (
 				<Fragment>
-					<h1 className="page-title">Data Types</h1>
+					<h1 className="page-title">Device Categories</h1>
 					<ul className="cards">
-						{dataTypes.map((dataType) => (
-							<li key={dataType.id} className="card">
+						{deviceCategories.map((deviceCategory) => (
+							<li key={deviceCategory.id} className="card">
 								<h2 className="card__header">
-									{dataType.name}
+									{deviceCategory.name[0]}
 									<button className="card__button card__button--edit">
 										<Pencil weight="duotone" />
 									</button>
 								</h2>
 								<div className="card__content">
-									<h3 className="card__content__header">
-										Permitted data / signal types:
-									</h3>
-									<ul className="data-types__specs">
-										{dataType.specs.map((spec) => (
-											<li key={spec} className="data-types__specs__item">
-												{spec}
-											</li>
-										))}
-									</ul>
+									<div
+										className="device-category__icon"
+										dangerouslySetInnerHTML={{ __html: deviceCategory.icon }}
+									></div>
 								</div>
 							</li>
 						))}

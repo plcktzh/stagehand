@@ -1,0 +1,22 @@
+.device-category__icon {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: var(--content-padding);
+
+	svg {
+		height: var(--size-10);
+		width: var(--size-10);
+	}
+}
+
+h2 .device-category__icon,
+.h2 .device-category__icon {
+	padding: 0;
+
+	svg {
+		fill: var(--heading-color);
+		height: var(--size-6);
+		width: var(--size-6);
+	}
+}

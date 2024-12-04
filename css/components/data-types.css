@@ -9,15 +9,25 @@
 		border-radius: var(--radius-2);
 		color: var(--text-color);
 		display: inline-block;
-		padding: calc(0.5 * var(--content-padding)) var(--content-padding);
+		padding-block: calc(0.5 * var(--content-padding));
+		padding-inline: var(--content-padding);
 		margin-block-end: var(--content-padding);
 		margin-inline-end: var(--content-padding);
 
 		&.data-types__specs__item--highlight {
-			background-color: transparent;
+			background-color: var(--color-paper);
 			border: 1px solid var(--gray-4);
 			color: var(--text-color);
 			font-weight: 700;
+		}
+	}
+
+	&.data-types__specs--small {
+		.data-types__specs__item {
+			padding-block: calc(0.25 * var(--content-padding));
+			padding-inline: calc(0.5 * var(--content-padding));
+			margin-block-end: calc(0.5 * var(--content-padding));
+			margin-inline-end: calc(0.5 * var(--content-padding));
 		}
 	}
 }

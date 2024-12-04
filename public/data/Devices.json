@@ -511,7 +511,7 @@
 		{
 			"id": "keystep",
 			"name": "KeyStep Pro",
-			"type": "controller",
+			"type": "sequencer",
 			"make": { "brand": "Arturia", "model": "KeyStep Pro" },
 			"connectors": {
 				"inputs": [
@@ -841,7 +841,7 @@
 		{
 			"id": "launchpad",
 			"name": "Launchpad Pro",
-			"type": "controller",
+			"type": "sequencer",
 			"make": {
 				"brand": "Novation",
 				"model": "Launchpad Pro",

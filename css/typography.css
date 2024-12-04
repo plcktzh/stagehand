@@ -136,3 +136,9 @@ html {
 	margin-block-end: var(--space-m);
 	margin-block-start: var(--space-xs);
 }
+
+.section-title {
+	font-size: var(--size-fluid-3);
+	display: flex;
+	gap: var(--space-xs);
+}

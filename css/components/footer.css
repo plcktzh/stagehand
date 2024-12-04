@@ -16,8 +16,7 @@
 		transition: all var(--duration) ease-in-out;
 
 		&:hover {
-			background-color: var(--body-background);
-			color: var(--text-color);
+			background-color: var(--gray-7);
 		}
 	}
 }

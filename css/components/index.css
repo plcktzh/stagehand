@@ -8,6 +8,7 @@
 
 /* Pages */
 /* @import 'setups'; */
-/* @import 'devices'; */
+@import 'devices';
 /* @import 'connector-types'; */
 @import 'data-types';
+@import 'device-categories';

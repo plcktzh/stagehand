@@ -7,7 +7,7 @@ export default function Spinner() {
 			width="60"
 			height="30"
 			color="#131313"
-			ariaLabel="three-dots-loading"
+			aria-label="three-dots-loading"
 			wrapperClass="spinner"
 		/>
 	);

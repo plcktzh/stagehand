@@ -23,18 +23,18 @@ export default function ConnectorTypes() {
 			{isError && <ErrorMessage error={error} />}
 			{isSuccess && (
 				<Fragment>
-					<h2 className="page-title">Connector Types</h2>
+					<h1 className="page-title">Connector Types</h1>
 					<ul className="cards">
 						{connectorTypes.map((connectorType) => (
 							<li key={connectorType.id} className="card">
-								<h3 className="card__header">
+								<h2 className="card__header">
 									{connectorType.name}
 									<button className="card__button card__button--edit">
 										<Pencil weight="duotone" />
 									</button>
-								</h3>
+								</h2>
 								<div className="card__content">
-									<h4 className="card__content__header">Type / Subtype:</h4>
+									<h3 className="card__content__header">Type / Subtype:</h3>
 									<p>
 										{connectorType.type} / {connectorType.subtype.join(', ')}
 									</p>
@@ -68,7 +68,7 @@ export default function ConnectorTypes() {
 						<li className="card card--button-only">
 							<button
 								className="card__button card__button--add"
-								ariaLabel="Add connector type"
+								aria-label="Add connector type"
 							>
 								<PlusSquare weight="duotone" />
 							</button>
@@ -84,7 +84,7 @@ async function fetchAllConnectorTypesAsArray({ queryKey }) {
 	const connectorTypes = await fetchAllAsArray({ queryKey });
 	const dataTypes = await fetchAllAsArray({ queryKey: ['dataTypes'] });
 
-	connectorTypes.map((connectorType) => {
+	const connectorTypesWithDataTypes = connectorTypes.map((connectorType) => {
 		connectorType.data = connectorType.data.map((connectorDataType) =>
 			dataTypes.find((dataType) => dataType.id === connectorDataType)
 		);
@@ -92,7 +92,7 @@ async function fetchAllConnectorTypesAsArray({ queryKey }) {
 		return connectorType;
 	});
 
-	return connectorTypes;
+	return connectorTypesWithDataTypes;
 }
 
 // TODO: Add functions for adding and editing connector types

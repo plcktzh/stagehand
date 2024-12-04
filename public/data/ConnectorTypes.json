@@ -3,7 +3,7 @@
 		{
 			"id": "din_5pin",
 			"name": "DIN 5-pin",
-			"data": ["audio", "midi", "sync"],
+			"data": ["midi", "sync"],
 			"type": "DIN",
 			"subtype": ["5-pin"]
 		},
