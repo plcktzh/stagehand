@@ -3,12 +3,14 @@ import {
 	Background,
 	Panel,
 	ReactFlow,
+	reconnectEdge,
 	useEdgesState,
 	useNodesState,
 	useReactFlow,
+	useStoreApi,
 } from '@xyflow/react';
 import '@xyflow/react/dist/base.css';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { buildDeviceNodesFromArray } from './data/devices';
 import {
 	useConnectorTypesContext,
@@ -30,16 +32,135 @@ export default function SetupsFlow() {
 	);
 
 	const nodeTypes = { device: DeviceNode };
-
+	const store = useStoreApi();
+	const edgeReconnectSuccessful = useRef(true);
 	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [rfInstance, setRfInstance] = useState(null);
-	const { setViewport } = useReactFlow();
+	const { setViewport, getInternalNode } = useReactFlow();
 
 	const onConnect = useCallback(
 		(params) => setEdges((eds) => addEdge(params, eds)),
 		[setEdges]
 	);
+
+	const MIN_DISTANCE = 150;
+
+	// Taken verbatim from https://reactflow.dev/examples/nodes/proximity-connect
+	const getClosestEdge = useCallback((node) => {
+		const { nodeLookup } = store.getState();
+		const internalNode = getInternalNode(node.id);
+
+		const closestNode = Array.from(nodeLookup.values()).reduce(
+			(res, n) => {
+				if (n.id !== internalNode.id) {
+					const dx =
+						n.internals.positionAbsolute.x -
+						internalNode.internals.positionAbsolute.x;
+					const dy =
+						n.internals.positionAbsolute.y -
+						internalNode.internals.positionAbsolute.y;
+					const d = Math.sqrt(dx * dx + dy * dy);
+
+					if (d < res.distance && d < MIN_DISTANCE) {
+						res.distance = d;
+						res.node = n;
+					}
+				}
+
+				return res;
+			},
+			{
+				distance: Number.MAX_VALUE,
+				node: null,
+			}
+		);
+
+		if (!closestNode.node) {
+			return null;
+		}
+
+		const closeNodeIsSource =
+			closestNode.node.internals.positionAbsolute.x <
+			internalNode.internals.positionAbsolute.x;
+
+		return {
+			id: closeNodeIsSource
+				? `${closestNode.node.id}-${node.id}`
+				: `${node.id}-${closestNode.node.id}`,
+			source: closeNodeIsSource ? closestNode.node.id : node.id,
+			target: closeNodeIsSource ? node.id : closestNode.node.id,
+		};
+	}, []);
+
+	// Taken verbatim from https://reactflow.dev/examples/nodes/proximity-connect
+	const onNodeDrag = useCallback(
+		(_, node) => {
+			const closeEdge = getClosestEdge(node);
+
+			setEdges((es) => {
+				const nextEdges = es.filter((e) => e.className !== 'temp');
+
+				if (
+					closeEdge &&
+					!nextEdges.find(
+						(ne) =>
+							ne.source === closeEdge.source && ne.target === closeEdge.target
+					)
+				) {
+					closeEdge.className = 'temp';
+					nextEdges.push(closeEdge);
+				}
+
+				return nextEdges;
+			});
+		},
+		[getClosestEdge, setEdges]
+	);
+
+	// Taken verbatim from https://reactflow.dev/examples/nodes/proximity-connect
+	const onNodeDragStop = useCallback(
+		(_, node) => {
+			const closeEdge = getClosestEdge(node);
+
+			setEdges((es) => {
+				const nextEdges = es.filter((e) => e.className !== 'temp');
+
+				if (
+					closeEdge &&
+					!nextEdges.find(
+						(ne) =>
+							ne.source === closeEdge.source && ne.target === closeEdge.target
+					)
+				) {
+					nextEdges.push(closeEdge);
+				}
+
+				return nextEdges;
+			});
+		},
+		[getClosestEdge]
+	);
+
+	// Taken verbatim from https://reactflow.dev/examples/edges/delete-edge-on-drop
+	const onReconnectStart = useCallback(() => {
+		edgeReconnectSuccessful.current = false;
+	}, []);
+
+	// Taken verbatim from https://reactflow.dev/examples/edges/delete-edge-on-drop
+	const onReconnect = useCallback((oldEdge, newConnection) => {
+		edgeReconnectSuccessful.current = true;
+		setEdges((els) => reconnectEdge(oldEdge, newConnection, els));
+	}, []);
+
+	// Taken verbatim from https://reactflow.dev/examples/edges/delete-edge-on-drop
+	const onReconnectEnd = useCallback((_, edge) => {
+		if (!edgeReconnectSuccessful.current) {
+			setEdges((eds) => eds.filter((e) => e.id !== edge.id));
+		}
+
+		edgeReconnectSuccessful.current = true;
+	}, []);
 
 	const isValidConnection = useCallback(
 		({ source, sourceHandle, target, targetHandle }) => {
@@ -88,12 +209,18 @@ export default function SetupsFlow() {
 			nodeTypes={nodeTypes}
 			onNodesChange={onNodesChange}
 			onEdgesChange={onEdgesChange}
+			onNodeDrag={onNodeDrag}
+			onNodeDragStop={onNodeDragStop}
+			onReconnect={onReconnect}
+			onReconnectStart={onReconnectStart}
+			onReconnectEnd={onReconnectEnd}
 			onConnect={onConnect}
 			onInit={setRfInstance}
 			isValidConnection={isValidConnection}
 			fitView
 			fitViewOptions={{ padding: 2 }}
 			style={{ backgroundColor: '#f0f0f0' }}
+			snapToGrid={true}
 		>
 			<Background />
 			<Panel position="top-right">
