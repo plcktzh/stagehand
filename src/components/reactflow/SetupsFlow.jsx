@@ -16,6 +16,7 @@ import {
 	useDevicesContext,
 } from '../Stagehand';
 import DeviceNode from './DeviceNode';
+import { validateConnections } from './data/connections';
 
 export default function SetupsFlow() {
 	const devices = useDevicesContext();
@@ -45,12 +46,17 @@ export default function SetupsFlow() {
 			const output = devices
 				.find(({ id }) => id === source)
 				.connectors.outputs.find(({ id }) => id === sourceHandle);
+			output.connectorType = connectorTypes.find(
+				({ id }) => id === output.connectorTypeId
+			);
 			const input = devices
 				.find(({ id }) => id === target)
 				.connectors.inputs.find(({ id }) => id === targetHandle);
+			input.connectorType = connectorTypes.find(
+				({ id }) => id === input.connectorTypeId
+			);
 
-			console.log(output.id, input.id);
-			return false;
+			return validateConnections(output, input);
 		}
 	);
 
