@@ -7,8 +7,8 @@
 @import 'error-message';
 
 /* Pages */
-/* @import 'setups'; */
+@import 'device-node';
+@import 'setups';
 @import 'devices';
-/* @import 'connector-types'; */
 @import 'data-types';
 @import 'device-categories';

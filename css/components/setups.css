@@ -1,0 +1,19 @@
+.react-flow .react-flow__edges {
+	z-index: 9999;
+}
+
+.react-flow__edge {
+	opacity: 0.5;
+	transition: opacity var(--duration) ease-in-out;
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		opacity: 1;
+	}
+}
+
+.react-flow__edge-path {
+	stroke: var(--color-offblack) !important;
+	stroke-width: 5 !important;
+}

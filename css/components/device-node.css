@@ -1,0 +1,109 @@
+.device {
+	--device-background: var(--color-paper);
+	--device-color: var(--color-offblack);
+	--device-handle-background: var(--color-tertiary);
+	--device-handle-color: var(--color-paper);
+	--device-header-color: var(--color-primary);
+
+	&.device--effect {
+		--device-background: var(--yellow-8);
+		--device-handle-background: var(--yellow-12);
+		--device-header-color: var(--color-offblack);
+	}
+
+	&.device--instrument {
+		--device-background: var(--blue-9);
+		--device-color: var(--color-paper);
+		--device-handle-background: var(--blue-2);
+		--device-handle-color: var(--color-offblack);
+		--device-header-color: var(--color-paper);
+	}
+
+	&.device--mixer {
+		--device-background: var(--color-primary);
+		--device-color: var(--color-paper);
+		--device-handle-background: var(--orange-3);
+		--device-handle-color: var(--color-offblack);
+		--device-header-color: var(--color-paper);
+	}
+
+	&.device--controller {
+		--device-background: var(--color-tertiary);
+		--device-color: var(--color-paper);
+		--device-handle-background: var(--teal-0);
+		--device-handle-color: var(--color-offblack);
+		--device-header-color: var(--color-paper);
+	}
+
+	&.device--sequencer {
+		--device-background: var(--pink-9);
+		--device-color: var(--color-paper);
+		--device-handle-background: var(--pink-2);
+		--device-handle-color: var(--color-offblack);
+		--device-header-color: var(--color-paper);
+	}
+
+	color: var(--device-color);
+	display: flex;
+	flex-direction: column;
+	background-color: var(--device-background);
+	border: unset;
+	box-shadow: var(--shadow-4);
+	border-radius: var(--radius-2);
+	padding: var(--space-3xs);
+	width: 450px;
+
+	.device__connectors {
+		display: flex;
+	}
+
+	.device__inputs,
+	.device__outputs {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	.device__connector {
+		align-items: center;
+		background-color: var(--device-handle-background);
+		border-radius: var(--radius-5);
+		color: var(--device-handle-color);
+		justify-content: space-between;
+		display: flex;
+		font-size: var(--size-fluid-1);
+		margin: var(--space-3xs);
+		padding: var(--space-3xs) var(--space-2xs);
+	}
+
+	.react-flow__handle {
+		background-color: var(--device-handle-color);
+		border-radius: var(--radius-round);
+		inset: 0;
+		transform: unset;
+		border: unset;
+		position: relative;
+		text-align: center;
+		width: 12px;
+		height: 12px;
+	}
+
+	.device__data {
+		padding: var(--content-padding);
+	}
+
+	.device__data__header {
+		color: var(--device-header-color);
+		font-size: var(--size-7);
+		margin: 0 0 var(--content-padding);
+		display: flex;
+		gap: var(--space-xs);
+
+		svg {
+			fill: var(--device-header-color);
+		}
+	}
+}

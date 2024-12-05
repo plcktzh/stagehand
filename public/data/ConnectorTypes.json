@@ -5,91 +5,184 @@
 			"name": "DIN 5-pin",
 			"dataTypeId": ["midi", "sync"],
 			"type": "DIN",
-			"subtype": ["5-pin"]
+			"subtype": ["5-pin"],
+			"compatibleConnectorTypeId": ["jack_eighthinch_trs", "din_5pin"]
 		},
 		{
 			"id": "rca",
 			"name": "RCA",
 			"dataTypeId": ["audio"],
 			"type": "RCA",
-			"subtype": []
+			"subtype": [],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "xlr_3pin",
 			"name": "XLR 3-pin",
 			"dataTypeId": ["audio"],
 			"type": "XLR",
-			"subtype": ["3-pin"]
+			"subtype": ["3-pin"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "xlr_quarterjack_combo",
 			"name": "XLR 3-pin / 1/4 Inch Jack TRS Combo",
 			"dataTypeId": ["audio"],
 			"type": ["XLR", "Jack"],
-			"subtype": ["3-pin", "Quarter Inch", "TRS"]
+			"subtype": ["3-pin", "Quarter Inch", "TRS"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "jack_quarterinch_trs",
 			"name": "1/4 Inch Jack TRS",
 			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
-			"subtype": ["Quarter Inch", "TRS"]
+			"subtype": ["Quarter Inch", "TRS"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "jack_eighthinch_trs",
 			"name": "1/8 Inch Jack TRS",
-			"dataTypeId": ["audio", "cv", "sync"],
+			"dataTypeId": ["audio", "cv", "midi", "sync"],
 			"type": "Jack",
-			"subtype": ["Eighth Inch", "TRS"]
+			"subtype": ["Eighth Inch", "TRS"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "jack_quarterinch_ts",
 			"name": "1/4 Inch Jack TS",
 			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
-			"subtype": ["Quarter Inch", "TS"]
+			"subtype": ["Quarter Inch", "TS"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "jack_eighthinch_ts",
 			"name": "1/8 Inch Jack TS",
 			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
-			"subtype": ["Eighth Inch", "TS"]
+			"subtype": ["Eighth Inch", "TS"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
 		},
 		{
 			"id": "jack_eighthinch_trrs",
 			"name": "1/8 Inch Jack TRRS",
 			"dataTypeId": ["audio"],
 			"type": "Jack",
-			"subtype": ["Eighth Inch", "TRRS"]
+			"subtype": ["Eighth Inch", "TRRS"],
+			"compatibleConnectorTypeId": [
+				"xlr_3pin",
+				"xlr_quarterjack_combo",
+				"jack_eighthinch_trs",
+				"jack_eighthinch_ts",
+				"jack_quarterinch_trrs",
+				"jack_quarterinch_trs",
+				"jack_quarterinch_ts",
+				"rca"
+			]
+		},
+		{
+			"id": "usb_a",
+			"name": "USB Type A",
+			"dataTypeId": ["audio", "midi", "power"],
+			"type": "USB",
+			"subtype": ["A"],
+			"compatibleConnectorTypeId": ["usb_b", "usb_mini", "usb_micro", "usb_c"]
 		},
 		{
 			"id": "usb_b",
 			"name": "USB Type B",
 			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
-			"subtype": ["B"]
+			"subtype": ["B"],
+			"compatibleConnectorTypeId": ["usb_a"]
 		},
 		{
 			"id": "usb_mini",
 			"name": "USB Mini B",
 			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
-			"subtype": ["Mini", "B"]
+			"subtype": ["Mini", "B"],
+			"compatibleConnectorTypeId": ["usb_a"]
 		},
 		{
 			"id": "usb_micro",
 			"name": "USB Micro B",
 			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
-			"subtype": ["Micro", "B"]
+			"subtype": ["Micro", "B"],
+			"compatibleConnectorTypeId": ["usb_a", "usb_micro", "usb_c"]
 		},
 		{
 			"id": "usb_c",
 			"name": "USB C",
 			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
-			"subtype": ["C"]
+			"subtype": ["C"],
+			"compatibleConnectorTypeId": ["usb_a", "usb_micro", "usb_c"]
 		}
 	]
 }
