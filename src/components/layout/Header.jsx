@@ -3,14 +3,13 @@ import { Link } from 'wouter';
 export default function Header() {
 	return (
 		<header className="site-header content-padding">
-			<span className="site-title">Stagehand</span>
+			<span className="site-title">
+				<Link href="/" className={(active) => (active ? 'is-active' : '')}>
+					Stagehand
+				</Link>
+			</span>
 			<nav className="main-navigation">
 				<ul>
-					<li>
-						<Link href="/" className={(active) => (active ? 'is-active' : '')}>
-							Home
-						</Link>
-					</li>
 					<li>
 						<Link
 							href="/setups"

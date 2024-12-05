@@ -3,91 +3,91 @@
 		{
 			"id": "din_5pin",
 			"name": "DIN 5-pin",
-			"data": ["midi", "sync"],
+			"dataTypeId": ["midi", "sync"],
 			"type": "DIN",
 			"subtype": ["5-pin"]
 		},
 		{
 			"id": "rca",
 			"name": "RCA",
-			"data": ["audio"],
+			"dataTypeId": ["audio"],
 			"type": "RCA",
 			"subtype": []
 		},
 		{
 			"id": "xlr_3pin",
 			"name": "XLR 3-pin",
-			"data": ["audio"],
+			"dataTypeId": ["audio"],
 			"type": "XLR",
 			"subtype": ["3-pin"]
 		},
 		{
 			"id": "xlr_quarterjack_combo",
 			"name": "XLR 3-pin / 1/4 Inch Jack TRS Combo",
-			"data": ["audio"],
+			"dataTypeId": ["audio"],
 			"type": ["XLR", "Jack"],
 			"subtype": ["3-pin", "Quarter Inch", "TRS"]
 		},
 		{
 			"id": "jack_quarterinch_trs",
 			"name": "1/4 Inch Jack TRS",
-			"data": ["audio", "cv", "sync"],
+			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
 			"subtype": ["Quarter Inch", "TRS"]
 		},
 		{
 			"id": "jack_eighthinch_trs",
 			"name": "1/8 Inch Jack TRS",
-			"data": ["audio", "cv", "sync"],
+			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
 			"subtype": ["Eighth Inch", "TRS"]
 		},
 		{
 			"id": "jack_quarterinch_ts",
 			"name": "1/4 Inch Jack TS",
-			"data": ["audio", "cv", "sync"],
+			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
 			"subtype": ["Quarter Inch", "TS"]
 		},
 		{
 			"id": "jack_eighthinch_ts",
 			"name": "1/8 Inch Jack TS",
-			"data": ["audio", "cv", "sync"],
+			"dataTypeId": ["audio", "cv", "sync"],
 			"type": "Jack",
 			"subtype": ["Eighth Inch", "TS"]
 		},
 		{
 			"id": "jack_eighthinch_trrs",
 			"name": "1/8 Inch Jack TRRS",
-			"data": ["audio"],
+			"dataTypeId": ["audio"],
 			"type": "Jack",
 			"subtype": ["Eighth Inch", "TRRS"]
 		},
 		{
 			"id": "usb_b",
 			"name": "USB Type B",
-			"data": ["audio", "midi", "power"],
+			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
 			"subtype": ["B"]
 		},
 		{
 			"id": "usb_mini",
 			"name": "USB Mini B",
-			"data": ["audio", "midi", "power"],
+			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
 			"subtype": ["Mini", "B"]
 		},
 		{
 			"id": "usb_micro",
 			"name": "USB Micro B",
-			"data": ["audio", "midi", "power"],
+			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
 			"subtype": ["Micro", "B"]
 		},
 		{
 			"id": "usb_c",
 			"name": "USB C",
-			"data": ["audio", "midi", "power"],
+			"dataTypeId": ["audio", "midi", "power"],
 			"type": "USB",
 			"subtype": ["C"]
 		}

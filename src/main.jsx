@@ -18,9 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<Header />
-			<main className="site-content content-padding">
-				<Stagehand />
-			</main>
+			<Stagehand />
 			<Footer />
 		</QueryClientProvider>
 	</React.StrictMode>

@@ -3,24 +3,27 @@
 		{
 			"id": "monotron",
 			"name": "Monotron",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Korg", "model": "Monotron Delay" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "aux",
 						"name": "Aux",
-						"connector": "jack_eighthinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					}
 				],
 				"outputs": [
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Dual Mono", "Headphones Level"]
 						}
 					}
@@ -30,7 +33,7 @@
 		{
 			"id": "rytm",
 			"name": "Rytm",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": {
 				"brand": "Elektron",
 				"model": "Analog Rytm",
@@ -41,18 +44,18 @@
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -66,59 +69,59 @@
 					{
 						"id": "external-in-l",
 						"name": "External In L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "external-in-r",
 						"name": "External In R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "audio-in-l",
 						"name": "Audio In L (Sampling)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "audio-in-r",
 						"name": "Audio In R (Sampling)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "control-in-1",
 						"name": "Control In 1",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "control-in-2",
 						"name": "Control In 2",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out / Sync A",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi", "sync"],
+							"dataTypeId": ["midi", "sync"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -132,9 +135,9 @@
 					{
 						"id": "midi-thru",
 						"name": "MIDI Thru / Sync B",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi", "sync"],
+							"dataTypeId": ["midi", "sync"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -148,9 +151,9 @@
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -164,77 +167,77 @@
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "main-out-l",
 						"name": "Main Out L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "main-out-r",
 						"name": "Main Out R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "bd",
 						"name": "BD",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sd",
 						"name": "SD",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "rs-cp",
 						"name": "RS/CP",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "bt",
 						"name": "BT",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "lt",
 						"name": "LT",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "mt-ht",
 						"name": "MT/HT",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "ch-oh",
 						"name": "CH/OH",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "cy-cb",
 						"name": "CY/CB",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -242,25 +245,25 @@
 		{
 			"id": "tr8s",
 			"name": "TR-8S",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Roland", "model": "TR-8S" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -274,18 +277,18 @@
 					{
 						"id": "ext-in-l",
 						"name": "External In L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "ext-in-r",
 						"name": "External In R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -294,18 +297,18 @@
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -319,89 +322,92 @@
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "mix-out-l",
 						"name": "Mix Out L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "mix-out-r",
 						"name": "Mix Out R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "assign-out-a-l",
 						"name": "Assignable Out A L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "assign-out-a-r",
 						"name": "Assignable Out A R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "assign-out-b-l",
 						"name": "Assignable Out B L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "assign-out-b-r",
 						"name": "Assignable Out B R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "assign-out-c-l",
 						"name": "Assignable Out C L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "assign-out-c-r",
 						"name": "Assignable Out C R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "trigger-out",
 						"name": "Trigger Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["S-Trigger", "V-Trigger"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["S-Trigger", "V-Trigger"]
+						}
 					}
 				]
 			}
@@ -409,99 +415,99 @@
 		{
 			"id": "peak",
 			"name": "Peak",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Novation", "model": "Peak" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "cv-mod-in",
 						"name": "CV Mod In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "pedal-1",
 						"name": "Pedal 1",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["cv"], "specs": ["Expression", "Sustain"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["cv"], "specs": ["Expression", "Sustain"] }
 					},
 					{
 						"id": "pedal-2",
 						"name": "Pedal 2",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["cv"], "specs": ["Expression", "Sustain"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["cv"], "specs": ["Expression", "Sustain"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-thru",
 						"name": "MIDI Thru",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "main-out-l",
 						"name": "Main Out L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "main-out-r",
 						"name": "Main Out R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -511,25 +517,25 @@
 		{
 			"id": "keystep",
 			"name": "KeyStep Pro",
-			"type": "sequencer",
+			"deviceCategoryId": "sequencer",
 			"make": { "brand": "Arturia", "model": "KeyStep Pro" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "power"],
+							"dataTypeId": ["midi", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -545,184 +551,196 @@
 					{
 						"id": "sustain",
 						"name": "Sustain",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["cv"], "specs": ["Sustain"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["cv"], "specs": ["Sustain"] }
 					},
 					{
 						"id": "clock-in",
 						"name": "Clock In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out-1",
 						"name": "MIDI Out 1",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-out-2",
 						"name": "MIDI Out 2",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "clock-out",
 						"name": "Clock Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					},
 					{
 						"id": "clock-reset-out",
 						"name": "Clock Reset Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Reset"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Reset"] }
 					},
 					{
 						"id": "metronome-output",
 						"name": "Metronome Output",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Dual Mono", "Headphones Level"]
 						}
 					},
 					{
 						"id": "drum-gate-1",
 						"name": "Drum Gate 1",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-2",
 						"name": "Drum Gate 2",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-3",
 						"name": "Drum Gate 3",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-4",
 						"name": "Drum Gate 4",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-5",
 						"name": "Drum Gate 5",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-6",
 						"name": "Drum Gate 6",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-7",
 						"name": "Drum Gate 7",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "drum-gate-8",
 						"name": "Drum Gate 8",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "voice-1-pitch",
 						"name": "Voice 1 Pitch",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "voice-1-velo-mod",
 						"name": "Voice 1 Velo/Mod",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "voice-1-gate",
 						"name": "Voice 1 Gate",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "voice-2-pitch",
 						"name": "Voice 2 Pitch",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "voice-2-velo-mod",
 						"name": "Voice 2 Velo/Mod",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "voice-2-gate",
 						"name": "Voice 2 Gate",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "voice-3-pitch",
 						"name": "Voice 3 Pitch",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "voice-3-velo-mod",
 						"name": "Voice 3 Velo/Mod",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "voice-3-gate",
 						"name": "Voice 3 Gate",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "voice-4-pitch",
 						"name": "Voice 4 Pitch",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "voice-4-velo-mod",
 						"name": "Voice 4 Velo/Mod",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "voice-4-gate",
 						"name": "Voice 4 Gate",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					}
 				]
 			}
@@ -730,52 +748,52 @@
 		{
 			"id": "midihub",
 			"name": "Midihub",
-			"type": "controller",
+			"deviceCategoryId": "controller",
 			"make": { "brand": "Blokas", "model": "Midihub" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in-a",
 						"name": "MIDI In A",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-in-b",
 						"name": "MIDI In B",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-in-c",
 						"name": "MIDI In C",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-in-d",
 						"name": "MIDI In D",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "power"],
+							"dataTypeId": ["midi", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -793,45 +811,45 @@
 					{
 						"id": "midi-out-a",
 						"name": "MIDI Out A",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-out-b",
 						"name": "MIDI Out B",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-out-c",
 						"name": "MIDI Out C",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-out-d",
 						"name": "MIDI Out D",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					}
@@ -841,7 +859,7 @@
 		{
 			"id": "launchpad",
 			"name": "Launchpad Pro",
-			"type": "sequencer",
+			"deviceCategoryId": "sequencer",
 			"make": {
 				"brand": "Novation",
 				"model": "Launchpad Pro",
@@ -852,18 +870,18 @@
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_c",
+						"connectorTypeId": "usb_c",
 						"data": {
-							"type": ["midi", "power"],
+							"dataTypeId": ["midi", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -881,27 +899,27 @@
 					{
 						"id": "midi-out-1",
 						"name": "MIDI Out 1",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-out-2",
 						"name": "MIDI Out 2",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_c",
+						"connectorTypeId": "usb_c",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					}
@@ -911,57 +929,63 @@
 		{
 			"id": "tracker",
 			"name": "Tracker",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Polyend", "model": "Tracker" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_c",
+						"connectorTypeId": "usb_c",
 						"data": {
-							"type": ["power"],
+							"dataTypeId": ["power"],
 							"specs": ["Power", "DC", "Low Voltage"]
 						}
 					},
 					{
 						"id": "line-in",
 						"name": "Line In",
-						"connector": "jack_eighthinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					},
 					{
 						"id": "mic",
 						"name": "Mic",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "out",
 						"name": "Out",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					}
@@ -971,7 +995,7 @@
 		{
 			"id": "heat",
 			"name": "Heat",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": {
 				"brand": "Elektron",
 				"model": "Analog Heat",
@@ -982,18 +1006,18 @@
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -1007,41 +1031,41 @@
 					{
 						"id": "audio-in-l",
 						"name": "Audio In L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "audio-in-r",
 						"name": "Audio In R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "control-in-1",
 						"name": "Control In 1",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "control-in-2",
 						"name": "Control In 2",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out / Sync A",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi", "sync"],
+							"dataTypeId": ["midi", "sync"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -1055,9 +1079,9 @@
 					{
 						"id": "midi-thru",
 						"name": "MIDI Thru / Sync B",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi", "sync"],
+							"dataTypeId": ["midi", "sync"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -1071,9 +1095,9 @@
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -1087,27 +1111,27 @@
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "main-out-l",
 						"name": "Main Out L",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "main-out-r",
 						"name": "Main Out R",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -1117,25 +1141,25 @@
 		{
 			"id": "vt4",
 			"name": "VT-4",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Roland", "model": "VT-4" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio", "power"],
+							"dataTypeId": ["midi", "audio", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -1152,23 +1176,29 @@
 					{
 						"id": "mic-in-front",
 						"name": "Mic In (Front)",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "mic-in-back",
 						"name": "Mic In (Back)",
-						"connector": "xlr_quarterjack_combo",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_quarterjack_combo",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					}
 				],
 				"outputs": [
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "audio"],
+							"dataTypeId": ["midi", "audio"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -1182,27 +1212,27 @@
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "line-out-l",
 						"name": "Line Out Left/Mono",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Mono", "Line Level"]
 						}
 					},
 					{
 						"id": "line-out-r",
 						"name": "Line Out Right/Bypass",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Mono", "Line Level"]
 						}
 					}
@@ -1212,80 +1242,86 @@
 		{
 			"id": "dsp2024p",
 			"name": "DSP2024P",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Behringer", "model": "Virtualizer Pro DSP2024P" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
-						"data": { "type": ["midi"], "specs": ["Clock", "CC", "SysEx"] }
+						"connectorTypeId": "din_5pin",
+						"data": {
+							"dataTypeId": ["midi"],
+							"specs": ["Clock", "CC", "SysEx"]
+						}
 					},
 					{
 						"id": "input-1-jack",
 						"name": "Input 1 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "input-2-jack",
 						"name": "Input 2 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "input-1-xlr",
 						"name": "Input 1 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "input-2-xlr",
 						"name": "Input 2 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "din_5pin",
-						"data": { "type": ["midi"], "specs": ["Clock", "CC", "SysEx"] }
+						"connectorTypeId": "din_5pin",
+						"data": {
+							"dataTypeId": ["midi"],
+							"specs": ["Clock", "CC", "SysEx"]
+						}
 					},
 					{
 						"id": "midi-thru",
 						"name": "MIDI Thru",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "output-1-jack",
 						"name": "Output 1 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-2-jack",
 						"name": "Output 2 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-1-xlr",
 						"name": "Output 1 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-2-xlr",
 						"name": "Output 2 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -1293,25 +1329,25 @@
 		{
 			"id": "thru5",
 			"name": "MIDI Thru5",
-			"type": "controller",
+			"deviceCategoryId": "controller",
 			"make": { "brand": "CME", "model": "MIDI Thru5" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_c",
+						"connectorTypeId": "usb_c",
 						"data": {
-							"type": ["power"],
+							"dataTypeId": ["power"],
 							"specs": ["Power", "DC", "Low Voltage"]
 						}
 					}
@@ -1320,45 +1356,45 @@
 					{
 						"id": "midi-thru-1",
 						"name": "MIDI Thru 1",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-thru-2",
 						"name": "MIDI Thru 2",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-thru-3",
 						"name": "MIDI Thru 3",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-thru-4",
 						"name": "MIDI Thru 4",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "midi-thru-5",
 						"name": "MIDI Thru 5",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					}
@@ -1368,359 +1404,377 @@
 		{
 			"id": "mb2s",
 			"name": "MiniBrute 2S",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Arturia", "model": "MiniBrute", "version": "2S" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "vco-1-pitch",
 						"name": "VCO 1 Pitch",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "vco-1-fm",
 						"name": "VCO 1 FM",
-						"connector": "jack_eighthinch_ts",
+						"connectorTypeId": "jack_eighthinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Line Level", "Modulation"]
 						}
 					},
 					{
 						"id": "vco-1-ultrasaw",
 						"name": "VCO 1 Ultrasaw",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vco-1-pwm",
 						"name": "VCO 1 PWM",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vco-1-metal-in",
 						"name": "VCO 1 Metal In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "vco-1-metal-mod",
 						"name": "VCO 1 Metal Mod",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vco-1-sync",
 						"name": "VCO 1 Sync",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vco-1-linear-fm",
 						"name": "VCO 1 Linear FM",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vco-2-pitch",
 						"name": "VCO 2 Pitch",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "ext-in-master",
 						"name": "External In (Master)",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "ext-in",
 						"name": "External In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "filter-fm",
 						"name": "Filter FM",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "filter-rm",
 						"name": "Filter RM",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "filter-cutoff",
 						"name": "Filter Cutoff",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "amp-am",
 						"name": "Amp AM",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "amp",
 						"name": "Amp",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "inverter-in",
 						"name": "Inverter In",
-						"connector": "jack_eighthinch_ts",
+						"connectorTypeId": "jack_eighthinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Line Level", "CV", "Gate", "Modulation"]
 						}
 					},
 					{
 						"id": "adsr-trigger",
 						"name": "ADSR Trigger",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["V-Trigger", "S-Trigger"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["V-Trigger", "S-Trigger"]
+						}
 					},
 					{
 						"id": "ad-trigger",
 						"name": "AD Trigger",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["V-Trigger", "S-Trigger"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["V-Trigger", "S-Trigger"]
+						}
 					},
 					{
 						"id": "ad-attack",
 						"name": "AD Attack",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "ad-decay",
 						"name": "AD Decay",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vca-in-1",
 						"name": "VCA In 1",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vca-in-2",
 						"name": "VCA In 2",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vca-cv",
 						"name": "VCA CV",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "att1-in",
 						"name": "Attenuator 1 In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "att2-in",
 						"name": "Attenuator 2 In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "clock-in",
 						"name": "Clock In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					},
 					{
 						"id": "clock-reset",
 						"name": "Clock Reset",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Reset"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Reset"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "master-output",
 						"name": "Master Output",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Dual Mono", "Headphones Level"]
 						}
 					},
 					{
 						"id": "vco1-saw-out",
 						"name": "VCO 1 Sawtooth",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "vco1-sqr-out",
 						"name": "VCO 1 Square",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "vco1-tri-out",
 						"name": "VCO 1 Triangle",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "vco1-noise-out",
 						"name": "VCO 1 Noise",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "vco2-out",
 						"name": "VCO 2 Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "amp-out",
 						"name": "Amp Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "inverter-out",
 						"name": "Inverter Out",
-						"connector": "jack_eighthinch_ts",
+						"connectorTypeId": "jack_eighthinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Line Level", "CV", "Gate", "Modulation"]
 						}
 					},
 					{
 						"id": "adsr-out",
 						"name": "ADSR Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "ad-out",
 						"name": "AD Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "lfo1-out",
 						"name": "LFO 1 Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "lfo2-out",
 						"name": "LFO 2 Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vca-out",
 						"name": "VCA Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "att1-out",
 						"name": "Attenuator 1 Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "att2-out",
 						"name": "Attenuator 2 Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "sync-out",
 						"name": "Sync",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					},
 					{
 						"id": "run-out",
 						"name": "Run",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["V-Trigger", "S-Trigger"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["V-Trigger", "S-Trigger"]
+						}
 					},
 					{
 						"id": "kbd",
 						"name": "KBD",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "gate",
 						"name": "Gate t",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "mod1-out",
 						"name": "Velo / Mod 1",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "mod2-out",
 						"name": "Pressure / Mod 2",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					}
 				]
 			}
@@ -1728,134 +1782,146 @@
 		{
 			"id": "cat",
 			"name": "CAT",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Behringer", "model": "CAT" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "vco1-cv",
 						"name": "VCO1 CV",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "vco2-cv",
 						"name": "VCO2 CV",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "gate",
 						"name": "Gate",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "vcf-fc",
 						"name": "VCF Fc",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "vcf-q",
 						"name": "VCF Q",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "ext-audio",
 						"name": "Ext Audio",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "vca-cv",
 						"name": "VCA CV",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-thru",
 						"name": "MIDI Thru",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "main-output-low",
 						"name": "Main Output (Low)",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Instrument Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Instrument Level"]
+						}
 					},
 					{
 						"id": "main-output-high",
 						"name": "Main Output (High)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Dual Mono", "Headphones Level"]
 						}
 					},
 					{
 						"id": "main-out",
 						"name": "Main Out",
-						"connector": "jack_eighthinch_ts",
+						"connectorTypeId": "jack_eighthinch_ts",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Dual Mono", "Line Level"]
 						}
 					},
 					{
 						"id": "kb-cv",
 						"name": "KB CV",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "gate",
 						"name": "Gate",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "adsr",
 						"name": "ADSR",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "ar",
 						"name": "AR",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					}
 				]
 			}
@@ -1863,86 +1929,89 @@
 		{
 			"id": "td3sr",
 			"name": "TD-3 (SR)",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Behringer", "model": "TD-3" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "filter-in",
 						"name": "Filter In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sync-in",
 						"name": "Sync In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out/Thru",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Dual Mono", "Headphones Level"]
 						}
 					},
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "cv-out",
 						"name": "CV Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "gate-out",
 						"name": "Gate Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					}
 				]
 			}
@@ -1950,86 +2019,89 @@
 		{
 			"id": "td3rd",
 			"name": "TD-3 (RD)",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Behringer", "model": "TD-3" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "filter-in",
 						"name": "Filter In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sync-in",
 						"name": "Sync In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out/Thru",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Dual Mono", "Headphones Level"]
 						}
 					},
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "cv-out",
 						"name": "CV Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "gate-out",
 						"name": "Gate Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					}
 				]
 			}
@@ -2037,25 +2109,25 @@
 		{
 			"id": "microfreak",
 			"name": "MicroFreak",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Arturia", "model": "MicroFreak" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi", "power"],
+							"dataTypeId": ["midi", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -2071,64 +2143,70 @@
 					{
 						"id": "mic",
 						"name": "Headphones (Mic Input)",
-						"connector": "jack_eighthinch_trrs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "jack_eighthinch_trrs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "clock-in",
 						"name": "Clock In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trrs",
+						"connectorTypeId": "jack_eighthinch_trrs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "cvgate-cv",
 						"name": "CV Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Pitch Hz/V", "Pitch V/Oct"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": {
+							"dataTypeId": ["cv"],
+							"specs": ["Pitch Hz/V", "Pitch V/Oct"]
+						}
 					},
 					{
 						"id": "cvgate-gate",
 						"name": "Gate Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Gate"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Gate"] }
 					},
 					{
 						"id": "cvgate-pressure",
 						"name": "Pressure Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Modulation"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Modulation"] }
 					},
 					{
 						"id": "clock-out",
 						"name": "Clock Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				]
 			}
@@ -2136,89 +2214,89 @@
 		{
 			"id": "drumbrute",
 			"name": "Drumbrute",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Arturia", "model": "DrumBrute Impact" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "clock-in",
 						"name": "Clock In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "output-mix",
 						"name": "Mix Output",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-kick",
 						"name": "Individual Out Kick",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-snares",
 						"name": "Individual Out Snares",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-hihats",
 						"name": "Individual Out Hi Hats",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-fm-drum",
 						"name": "Individual Out FM Drum",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "clock-out",
 						"name": "Clock Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				]
 			}
@@ -2226,41 +2304,47 @@
 		{
 			"id": "pisound",
 			"name": "PiSound",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Blokas", "model": "PiSound" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "audio-in",
 						"name": "Audio In",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					}
 				],
 				"outputs": [
 					{
 						"id": "midi-out",
 						"name": "MIDI Out",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "audio-out",
 						"name": "Audio Out",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					}
 				]
 			}
@@ -2268,32 +2352,32 @@
 		{
 			"id": "c64",
 			"name": "C64/MSSIAH",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Commodore", "model": "C64", "version": "C" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In (MSSIAH)",
-						"connector": "din_5pin",
+						"connectorTypeId": "din_5pin",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "audio-in",
 						"name": "Audio In",
-						"connector": "rca",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "rca",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "audio-out",
 						"name": "Audio Out",
-						"connector": "rca",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "rca",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2301,25 +2385,25 @@
 		{
 			"id": "nts1",
 			"name": "NTS-1",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Korg", "model": "Nu:Tekt NTS-1" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_micro",
+						"connectorTypeId": "usb_micro",
 						"data": {
-							"type": ["midi", "power"],
+							"dataTypeId": ["midi", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -2335,31 +2419,34 @@
 					{
 						"id": "audio-in",
 						"name": "Audio In",
-						"connector": "jack_eighthinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					},
 					{
 						"id": "sync-in",
 						"name": "Sync In",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "sync-out",
 						"name": "Sync Out",
-						"connector": "jack_eighthinch_ts",
-						"data": { "type": ["cv"], "specs": ["Clock"] }
+						"connectorTypeId": "jack_eighthinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Clock"] }
 					}
 				]
 			}
@@ -2367,7 +2454,7 @@
 		{
 			"id": "mdx2600",
 			"name": "MDX2600",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": {
 				"brand": "Behringer",
 				"model": "Composer Pro-XL MDX2600",
@@ -2378,76 +2465,76 @@
 					{
 						"id": "input-1-jack",
 						"name": "Input 1 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "input-2-jack",
 						"name": "Input 2 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "input-1-xlr",
 						"name": "Input 1 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "input-2-xlr",
 						"name": "Input 2 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sidechain-return-1",
 						"name": "Sidechain Return 1",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sidechain-return-2",
 						"name": "Sidechain Return 2",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output-1-jack",
 						"name": "Output 1 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-2-jack",
 						"name": "Output 2 (Jack)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-1-xlr",
 						"name": "Output 1 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "output-2-xlr",
 						"name": "Output 2 (XLR)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sidechain-send-1",
 						"name": "Sidechain Send 1",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "sidechain-send-2",
 						"name": "Sidechain Send 2",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2455,23 +2542,26 @@
 		{
 			"id": "springrev1",
 			"name": "Spring Reverb 1",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "DIY", "model": "Spring Reverb" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Instrument Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Instrument Level"]
+						}
 					}
 				]
 			}
@@ -2479,23 +2569,26 @@
 		{
 			"id": "springrev2",
 			"name": "Spring Reverb 2",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "DIY", "model": "Spring Reverb" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Instrument Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Instrument Level"]
+						}
 					}
 				]
 			}
@@ -2503,42 +2596,42 @@
 		{
 			"id": "piano",
 			"name": "Piano",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Casio", "model": "Privia PX-S1100" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
+						"connectorTypeId": "usb_b",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "damper-pedal",
 						"name": "Damper Pedal",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["cv"], "specs": ["Sustain"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Sustain"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "line-out-l",
 						"name": "Line Out Left",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "line-out-r",
 						"name": "Line Out Right",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -2548,25 +2641,25 @@
 		{
 			"id": "tapedeck",
 			"name": "Tapedeck",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Sony", "model": "TC-WE435" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input-l",
 						"name": "Input Left",
-						"connector": "rca",
+						"connectorTypeId": "rca",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "input-r",
 						"name": "Input Right",
-						"connector": "rca",
+						"connectorTypeId": "rca",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -2575,27 +2668,27 @@
 					{
 						"id": "output-l",
 						"name": "Output Left",
-						"connector": "rca",
+						"connectorTypeId": "rca",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "output-r",
 						"name": "Output Right",
-						"connector": "rca",
+						"connectorTypeId": "rca",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					}
@@ -2605,39 +2698,42 @@
 		{
 			"id": "b1on",
 			"name": "B1on",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Zoom", "model": "B1on" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_mini",
+						"connectorTypeId": "usb_mini",
 						"data": {
-							"type": ["power"],
+							"dataTypeId": ["power"],
 							"specs": ["Power", "DC", "Low Voltage"]
 						}
 					},
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "aux",
 						"name": "Aux In",
-						"connector": "jack_eighthinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output (Phones)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Mono", "Line Level", "Stereo", "Headphones Level"]
 						}
 					}
@@ -2647,23 +2743,23 @@
 		{
 			"id": "rat",
 			"name": "Rat",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Musikding", "model": "Die Rat" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2671,39 +2767,39 @@
 		{
 			"id": "tapecore",
 			"name": "Tape Core",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Nu:x", "model": "Tape Core Deluxe" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "exp",
 						"name": "Expression",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["cv"], "specs": ["Expression"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["cv"], "specs": ["Expression"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "out-l",
 						"name": "Output (Left)",
-						"connector": "jack_quarterinch_ts",
+						"connectorTypeId": "jack_quarterinch_ts",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Mono", "Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "out-r",
 						"name": "Output Right",
-						"connector": "jack_quarterinch_ts",
+						"connectorTypeId": "jack_quarterinch_ts",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -2713,23 +2809,23 @@
 		{
 			"id": "rodent",
 			"name": "Rodent",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Harley Benton", "model": "Rodent" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2737,23 +2833,23 @@
 		{
 			"id": "sinner",
 			"name": "Sinner Amp",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Musikding", "model": "Sinner Amp", "version": "GT2" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2761,23 +2857,23 @@
 		{
 			"id": "knightoftone",
 			"name": "Knight of Tone",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Musikding", "model": "Knight of Tone" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2785,7 +2881,7 @@
 		{
 			"id": "pt2399",
 			"name": "PT2399 Delay",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": {
 				"brand": "Tubeland",
 				"model": "PT2399 Fx Delay",
@@ -2796,16 +2892,16 @@
 					{
 						"id": "input",
 						"name": "Input",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				],
 				"outputs": [
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -2813,25 +2909,25 @@
 		{
 			"id": "wingie",
 			"name": "Wingie",
-			"type": "effect",
+			"deviceCategoryId": "effect",
 			"make": { "brand": "Meng Qi", "model": "Wingie", "version": "MKII" },
 			"connectors": {
 				"inputs": [
 					{
 						"id": "midi-in",
 						"name": "MIDI In",
-						"connector": "jack_eighthinch_trs",
+						"connectorTypeId": "jack_eighthinch_trs",
 						"data": {
-							"type": ["midi"],
+							"dataTypeId": ["midi"],
 							"specs": ["Clock", "Transport", "CC", "Note Data", "SysEx"]
 						}
 					},
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_c",
+						"connectorTypeId": "usb_c",
 						"data": {
-							"type": ["midi", "power"],
+							"dataTypeId": ["midi", "power"],
 							"specs": [
 								"Clock",
 								"Transport",
@@ -2847,16 +2943,22 @@
 					{
 						"id": "audio-in",
 						"name": "Audio In",
-						"connector": "jack_eighthinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					}
 				],
 				"outputs": [
 					{
 						"id": "audio-out",
 						"name": "Audio Out",
-						"connector": "jack_eighthinch_trs",
-						"data": { "type": ["audio"], "specs": ["Stereo", "Line Level"] }
+						"connectorTypeId": "jack_eighthinch_trs",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Stereo", "Line Level"]
+						}
 					}
 				]
 			}
@@ -2864,7 +2966,7 @@
 		{
 			"id": "lfv2",
 			"name": "LFV-2",
-			"type": "controller",
+			"deviceCategoryId": "controller",
 			"make": {
 				"brand": "Musician's Footwear",
 				"model": "Lead Foot LFV-2"
@@ -2874,18 +2976,18 @@
 					{
 						"id": "in-1",
 						"name": "In 1",
-						"connector": "jack_quarterinch_ts",
+						"connectorTypeId": "jack_quarterinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Instrument Level", "Expression"]
 						}
 					},
 					{
 						"id": "in-2",
 						"name": "In 2",
-						"connector": "jack_quarterinch_ts",
+						"connectorTypeId": "jack_quarterinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Instrument Level", "Expression"]
 						}
 					}
@@ -2894,18 +2996,18 @@
 					{
 						"id": "out-1",
 						"name": "Out 1",
-						"connector": "jack_quarterinch_ts",
+						"connectorTypeId": "jack_quarterinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Instrument Level", "Expression"]
 						}
 					},
 					{
 						"id": "out-2",
 						"name": "Out 2",
-						"connector": "jack_quarterinch_ts",
+						"connectorTypeId": "jack_quarterinch_ts",
 						"data": {
-							"type": ["audio", "cv"],
+							"dataTypeId": ["audio", "cv"],
 							"specs": ["Mono", "Instrument Level", "Expression"]
 						}
 					}
@@ -2915,7 +3017,7 @@
 		{
 			"id": "soundcraft",
 			"name": "Signature",
-			"type": "mixer",
+			"deviceCategoryId": "mixer",
 			"make": {
 				"brand": "Soundcraft",
 				"model": "Signature",
@@ -2926,276 +3028,324 @@
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
-						"data": { "type": ["audio"], "specs": ["Multichannel"] }
+						"connectorTypeId": "usb_b",
+						"data": { "dataTypeId": ["audio"], "specs": ["Multichannel"] }
 					},
 					{
 						"id": "footswitch",
 						"name": "Footswitch",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["cv"], "specs": ["Sustain"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": { "dataTypeId": ["cv"], "specs": ["Sustain"] }
 					},
 					{
 						"id": "in-1-mic",
 						"name": "Input 1 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-1-line",
 						"name": "Input 1 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-2-mic",
 						"name": "Input 2 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-2-line",
 						"name": "Input 2 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-3-mic",
 						"name": "Input 3 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-3-line",
 						"name": "Input 3 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-4-mic",
 						"name": "Input 4 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-4-line",
 						"name": "Input 4 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-5-mic",
 						"name": "Input 5 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-5-line",
 						"name": "Input 5 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-6-mic",
 						"name": "Input 6 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-6-line",
 						"name": "Input 6 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-7-mic",
 						"name": "Input 7 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-7-line",
 						"name": "Input 7 (Line / Hi-Z)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Mono", "Line Level", "Instrument Level"]
 						}
 					},
 					{
 						"id": "in-8-mic",
 						"name": "Input 8 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-8-line",
 						"name": "Input 8 (Line / Hi-Z)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Mono", "Line Level", "Instrument Level"]
 						}
 					},
 					{
 						"id": "in-9-mic",
 						"name": "Input 9 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-9-line",
 						"name": "Input 9 (Line / Hi-Z)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Mono", "Line Level", "Instrument Level"]
 						}
 					},
 					{
 						"id": "in-10-mic",
 						"name": "Input 10 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-10-line",
 						"name": "Input 10 (Line / Hi-Z)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Mono", "Line Level", "Instrument Level"]
 						}
 					},
 					{
 						"id": "in-11-mic",
 						"name": "Input 11 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-11-line",
 						"name": "Input 11 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-12-mic",
 						"name": "Input 12 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-12-line",
 						"name": "Input 12 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-13-mic",
 						"name": "Input 13 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-13-line",
 						"name": "Input 13 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-14-mic",
 						"name": "Input 14 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-14-line",
 						"name": "Input 14 (Line)",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "in-15-mic",
 						"name": "Input 15 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-15-line",
 						"name": "Input 15 (Line)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-16-line",
 						"name": "Input 16 (Line)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-17-mic",
 						"name": "Input 17 (Mic)",
-						"connector": "xlr_3pin",
-						"data": { "type": ["audio"], "specs": ["Mono", "Microphone Level"] }
+						"connectorTypeId": "xlr_3pin",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Microphone Level"]
+						}
 					},
 					{
 						"id": "in-17-line",
 						"name": "Input 17 (Line)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-18-line",
 						"name": "Input 18 (Line)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-19-line",
 						"name": "Input 19 (Line)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-20-line",
 						"name": "Input 20 (Line)",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-21-line",
 						"name": "Input 21 (Line)",
-						"connector": "rca",
+						"connectorTypeId": "rca",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "in-22-line",
 						"name": "Input 22 (Line)",
-						"connector": "rca",
+						"connectorTypeId": "rca",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					}
@@ -3204,89 +3354,89 @@
 					{
 						"id": "usb",
 						"name": "USB",
-						"connector": "usb_b",
-						"data": { "type": ["audio"], "specs": ["Multichannel"] }
+						"connectorTypeId": "usb_b",
+						"data": { "dataTypeId": ["audio"], "specs": ["Multichannel"] }
 					},
 					{
 						"id": "mst-l",
 						"name": "Master L",
-						"connector": "xlr_3pin",
+						"connectorTypeId": "xlr_3pin",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Left Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "mst-r",
 						"name": "Master R",
-						"connector": "xlr_3pin",
+						"connectorTypeId": "xlr_3pin",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Right Channel", "Line Level"]
 						}
 					},
 					{
 						"id": "headphones",
 						"name": "Headphones",
-						"connector": "jack_quarterinch_trs",
+						"connectorTypeId": "jack_quarterinch_trs",
 						"data": {
-							"type": ["audio"],
+							"dataTypeId": ["audio"],
 							"specs": ["Stereo", "Headphones Level"]
 						}
 					},
 					{
 						"id": "aux-1",
 						"name": "Aux 1",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "aux-2",
 						"name": "Aux 2",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "aux-3",
 						"name": "Aux 3",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "aux-4",
 						"name": "Aux 4",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "aux-5",
 						"name": "Aux 5",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "grp-1",
 						"name": "Group 1",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "grp-2",
 						"name": "Group 2",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "grp-3",
 						"name": "Group 3",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					},
 					{
 						"id": "grp-4",
 						"name": "Group 4",
-						"connector": "jack_quarterinch_trs",
-						"data": { "type": ["audio"], "specs": ["Mono", "Line Level"] }
+						"connectorTypeId": "jack_quarterinch_trs",
+						"data": { "dataTypeId": ["audio"], "specs": ["Mono", "Line Level"] }
 					}
 				]
 			}
@@ -3294,7 +3444,7 @@
 		{
 			"id": "pacifica",
 			"name": "Pacifica",
-			"type": "instrument",
+			"deviceCategoryId": "instrument",
 			"make": { "brand": "Yamaha", "model": "Pacifica 112JL" },
 			"connectors": {
 				"inputs": [],
@@ -3302,8 +3452,11 @@
 					{
 						"id": "output",
 						"name": "Output",
-						"connector": "jack_quarterinch_ts",
-						"data": { "type": ["audio"], "specs": ["Mono", "Instrument Level"] }
+						"connectorTypeId": "jack_quarterinch_ts",
+						"data": {
+							"dataTypeId": ["audio"],
+							"specs": ["Mono", "Instrument Level"]
+						}
 					}
 				]
 			}
