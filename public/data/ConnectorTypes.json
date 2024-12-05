@@ -17,9 +17,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -34,9 +34,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -51,9 +51,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -68,9 +68,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -85,9 +85,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -102,9 +102,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -119,9 +119,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"
@@ -136,9 +136,9 @@
 			"compatibleConnectorTypeId": [
 				"xlr_3pin",
 				"xlr_quarterjack_combo",
+				"jack_eighthinch_trrs",
 				"jack_eighthinch_trs",
 				"jack_eighthinch_ts",
-				"jack_quarterinch_trrs",
 				"jack_quarterinch_trs",
 				"jack_quarterinch_ts",
 				"rca"

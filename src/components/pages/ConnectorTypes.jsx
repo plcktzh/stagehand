@@ -24,7 +24,30 @@ export default function ConnectorTypes() {
 										Permitted Data Types:
 									</h4>
 								</summary>
-								<DataTypeSpecsList data={connectorType} />
+								<DataTypeSpecsList data={connectorType} isSmall />
+							</details>
+							<details>
+								<summary>
+									<h4 className="card__content__header">
+										Compatible Connector Types:
+									</h4>
+								</summary>
+								<ul className="data-types__specs data-types__specs--small">
+									{connectorType.compatibleConnectorTypeId.map(
+										(compatibleConnectorType) => (
+											<li
+												key={compatibleConnectorType}
+												className="data-types__specs__item"
+											>
+												{
+													connectorTypes.find(
+														({ id }) => id === compatibleConnectorType
+													)?.name
+												}
+											</li>
+										)
+									)}
+								</ul>
 							</details>
 						</Card>
 					</li>
