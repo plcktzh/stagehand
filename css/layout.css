@@ -15,10 +15,6 @@ body {
 	flex-grow: 1;
 	margin-inline: auto;
 	overflow-y: auto;
-	width: 100%;
-}
-
-.site-content > div {
 	height: 100%;
 	width: 100%;
 }

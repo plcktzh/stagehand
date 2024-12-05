@@ -8,7 +8,7 @@ export default function ConnectorTypes() {
 	const connectorTypes = useConnectorTypesContext();
 
 	return (
-		<div className="connector-types">
+		<main className="site-content content-padding connector-types">
 			<h1 className="page-title">Connector Types</h1>
 			<ul className="cards">
 				{connectorTypes.map((connectorType) => (
@@ -60,7 +60,7 @@ export default function ConnectorTypes() {
 					console.log('Add Connector Type');
 				}}
 			/>
-		</div>
+		</main>
 	);
 }
 

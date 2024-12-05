@@ -12,7 +12,7 @@ export default function DeviceCategories() {
 	const deviceCategories = useDeviceCategoriesContext();
 
 	return (
-		<div className="device-categories">
+		<main className="site-content content-padding device-categories">
 			<h1 className="page-title">Device Categories</h1>
 			<ul className="cards">
 				{deviceCategories.map((deviceCategory) => (
@@ -33,7 +33,7 @@ export default function DeviceCategories() {
 					console.log('Add Device Category');
 				}}
 			/>
-		</div>
+		</main>
 	);
 }
 

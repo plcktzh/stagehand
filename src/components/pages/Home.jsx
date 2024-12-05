@@ -1,3 +1,3 @@
 export default function Home() {
-	return <div>Home</div>;
+	return <main className="site-content content-padding">Home</main>;
 }

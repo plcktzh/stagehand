@@ -1,6 +1,8 @@
 .site-header {
+	box-shadow: var(--shadow-6);
 	display: flex;
 	gap: var(--content-padding);
+	z-index: 1;
 }
 
 .site-title {

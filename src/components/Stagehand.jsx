@@ -61,7 +61,7 @@ export default function Stagehand() {
 	const setups = useLiveQuery(fetchSetups, []);
 
 	return (
-		<main className="site-content content-padding">
+		<Fragment>
 			{isPending && <Spinner />}
 			{isError && <ErrorMessage error={error} />}
 			{isSuccess && (
@@ -117,6 +117,6 @@ export default function Stagehand() {
 					)}
 				</Fragment>
 			)}
-		</main>
+		</Fragment>
 	);
 }

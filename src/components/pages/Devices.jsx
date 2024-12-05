@@ -10,7 +10,7 @@ export default function Devices() {
 	const deviceCategories = useDeviceCategoriesContext();
 
 	return (
-		<div className="devices">
+		<main className="site-content content-padding devices">
 			<h1 className="page-title">Devices</h1>
 			{deviceCategories.map((deviceCategory) => (
 				<Fragment key={deviceCategory.id}>
@@ -66,7 +66,7 @@ export default function Devices() {
 					/>
 				</Fragment>
 			))}
-		</div>
+		</main>
 	);
 }
 

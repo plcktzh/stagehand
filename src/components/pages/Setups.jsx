@@ -6,7 +6,9 @@ import SetupsFlow from '../reactflow/SetupsFlow';
 export default function Setups() {
 	return (
 		<ReactFlowProvider>
-			<SetupsFlow />
+			<main className="site-content">
+				<SetupsFlow />
+			</main>
 		</ReactFlowProvider>
 	);
 }

@@ -1,8 +1,10 @@
 .site-footer {
+	box-shadow: var(--shadow-6);
 	display: flex;
 	font-size: var(--font-size-1);
 	gap: var(--content-padding);
 	justify-content: flex-end;
+	z-index: 1;
 
 	a {
 		align-items: center;
