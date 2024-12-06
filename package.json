@@ -1,5 +1,5 @@
 {
-	"name": "vite-react-starter",
+	"name": "stagehand",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -9,19 +9,15 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@animxyz/core": "^0.6.6",
-		"@animxyz/react": "^0.6.7",
 		"@phosphor-icons/react": "^2.1.7",
 		"@tanstack/react-query": "^5.62.0",
 		"@xyflow/react": "^12.3.5",
-		"clsx": "^2.1.1",
 		"dexie": "^4.0.10",
 		"dexie-react-hooks": "^1.1.7",
 		"open-props": "^1.7.7",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-loader-spinner": "^6.1.6",
-		"redaxios": "^0.5.1",
 		"wouter": "^3.3.5"
 	},
 	"devDependencies": {
