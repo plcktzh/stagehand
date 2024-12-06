@@ -2,6 +2,9 @@ import {
 	addEdge,
 	Background,
 	Controls,
+	getConnectedEdges,
+	getIncomers,
+	getOutgoers,
 	MiniMap,
 	Panel,
 	ReactFlow,
@@ -22,7 +25,7 @@ import {
 } from '../Stagehand';
 import DeviceNode from './DeviceNode';
 import { validateConnections } from './data/connections';
-import { FloppyDisk, FolderOpen } from '@phosphor-icons/react';
+import { FloppyDisk, FolderOpen, PlusSquare } from '@phosphor-icons/react';
 import { db, fetchSetups } from '../../services/db';
 import { useLiveQuery } from 'dexie-react-hooks';
 
@@ -33,20 +36,21 @@ export default function SetupsFlow() {
 	const deviceCategories = useDeviceCategoriesContext();
 	const connectorTypes = useConnectorTypesContext();
 
-	const initialNodes = buildDeviceNodesFromArray(
+	const [deviceNodes, setDeviceNodes] = useState(() => buildDeviceNodesFromArray(
 		devices,
 		deviceCategories,
 		connectorTypes
-	);
+	));
 
 	const nodeTypes = { device: DeviceNode };
 	const store = useStoreApi();
 	const edgeReconnectSuccessful = useRef(true);
-	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+	const [nodes, setNodes, onNodesChange] = useNodesState([]);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [rfInstance, setRfInstance] = useState(null);
 	const { setViewport, getInternalNode, getNodes, updateNode } = useReactFlow();
 	const nodesInitialized = useNodesInitialized({ includeHiddenNodes: false });
+	const [selectedDevice, setSelectedDevice] = useState('');
 	const [setupName, setSetupName] = useState('Untitled Setup');
 	const [loadedSetup, setLoadedSetup] = useState('');
 	const savedSetups = useLiveQuery(fetchSetups, []);
@@ -209,24 +213,65 @@ export default function SetupsFlow() {
 			const output = devices
 				.find(({ id }) => id === source)
 				.connectors.outputs.find(({ id }) => id === sourceHandle);
-			output.connectorType = connectorTypes.find(
+			if (output) output.connectorType = connectorTypes.find(
 				({ id }) => id === output.connectorTypeId
 			);
 			const input = devices
 				.find(({ id }) => id === target)
 				.connectors.inputs.find(({ id }) => id === targetHandle);
-			input.connectorType = connectorTypes.find(
+			if (input) input.connectorType = connectorTypes.find(
 				({ id }) => id === input.connectorTypeId
 			);
 
-			return validateConnections(output, input);
+			return source !== target && validateConnections(output, input);
 		}
 	);
 
+	// Taken verbatim from https://reactflow.dev/examples/nodes/delete-middle-node
+	const onNodesDelete = useCallback((deleted) => {
+		setEdges(
+			deleted.reduce((acc, node) => {
+				const incomers = getIncomers(node, nodes, edges);
+				const outgoers = getOutgoers(node, nodes, edges);
+				const connectedEdges = getConnectedEdges([node], edges);
+
+				const remainingEdges = acc.filter((edge) => !connectedEdges.includes(edge));
+
+				const createdEdges = incomers.flatMap(({ id: source }) => outgoers.map(({ id: target }) => ({
+					id: `${source}->${target}`,
+					source,
+					target
+				})),
+			);
+			setDeviceNodes(deviceNodes.map((device) => { 
+				if (device.id === node.id) {
+					device.data.added = false;
+				}
+				return device; 
+			}));
+
+			return [...remainingEdges, ...createdEdges];
+			}, edges),
+		);
+	}, [nodes, edges]);
+
+	const onAddDevice = useCallback(() => {
+		const deviceNode = deviceNodes.find(({id}) => id === selectedDevice);
+
+		if (deviceNode.data.added === true) return;
+		else {
+			setNodes([...nodes, deviceNode]);
+			setDeviceNodes(deviceNodes.map((device) => { 
+				if (device.id === selectedDevice) {
+					device.data.added = true;
+				}
+				return device; 
+			}));
+		}
+	}, [selectedDevice, setDeviceNodes, deviceNodes, setNodes, nodes]);
+
 	const onSave = useCallback(() => {
 		if (rfInstance) {
-			// const flow = rfInstance.toObject();
-			// localStorage.setItem('stagehand_temp', JSON.stringify(flow));
 			db.setups.put({
 				date: new Date().toUTCString(),
 				name: setupName,
@@ -242,7 +287,15 @@ export default function SetupsFlow() {
 
 			if (flow) {
 				const { x = 0, y = 0, zoom = 1 } = flow.viewport;
-				setNodes(flow.nodes || []);
+				setNodes(flow.nodes.map(node => {
+					setDeviceNodes(deviceNodes.map((device) => { 
+						if (device.id === node.id) {
+							device.data.added = true;
+						}
+						return device; 
+					}));
+					return node;
+				}) || []);
 				setEdges(flow.edges || []);
 				setViewport({ x, y, zoom });
 
@@ -259,6 +312,7 @@ export default function SetupsFlow() {
 			edges={edges}
 			nodeTypes={nodeTypes}
 			onNodesChange={onNodesChange}
+			onNodesDelete={onNodesDelete}
 			onEdgesChange={onEdgesChange}
 			onNodeDrag={onNodeDrag}
 			onNodeDragStop={onNodeDragStop}
@@ -275,6 +329,27 @@ export default function SetupsFlow() {
 		>
 			<Background />
 			<Panel position="top-right" className="setups__control-panel">
+				<fieldset>
+					<label htmlFor="device" hidden>
+						Device:
+					</label>
+					<select
+						id="device"
+						defaultValue=""
+						onChange={(e) => setSelectedDevice(e.target.value)}
+					>
+						<option value="">Choose a device to add ...</option>
+						{deviceNodes &&
+							deviceNodes.filter(({ data }) => !data.added).sort((a, b) => b.deviceCategoryId > a.deviceCategoryId).map((device) => (
+								<option key={device.id} value={device.id}>
+									{device.data.label}
+								</option>
+							))}
+					</select>
+					<button onClick={onAddDevice} aria-label="Add Device">
+						<PlusSquare weight="duotone" size="16" />
+					</button>
+				</fieldset>
 				<fieldset>
 					<label htmlFor="name" hidden>
 						Name:
@@ -300,9 +375,9 @@ export default function SetupsFlow() {
 					>
 						<option value="">Choose a saved setup ...</option>
 						{savedSetups &&
-							savedSetups.map((setup) => (
+							savedSetups.sort((a, b) => b.date > a.date).map((setup) => (
 								<option key={`${setup.name}_${setup.date}`} value={setup.date}>
-									{setup.name} ({setup.date})
+									{setup.date} – {setup.name}
 								</option>
 							))}
 					</select>

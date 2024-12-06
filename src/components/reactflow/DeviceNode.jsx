@@ -1,15 +1,23 @@
-import { Handle, Position } from '@xyflow/react';
+import { Trash } from '@phosphor-icons/react';
+import { Handle, Position, useReactFlow } from '@xyflow/react';
 
 export default function DeviceNode({ data, isConnectable }) {
+	const { deleteElements } = useReactFlow();
+
 	return (
 		<div className={`device device--${data.category.id}`}>
 			<div className="device__data device__drag-handle">
 				<h2 className="device__data__header">
-					<div
+					<span>
+						<div
 						className="icon"
 						dangerouslySetInnerHTML={{ __html: data.category.icon }}
 					></div>{' '}
 					{data.label}
+					</span>
+					<button onClick={() => deleteElements({ nodes: [{ id: data.id}]})} aria-label={`Delete device ${data.label}`}>
+						<Trash weight="duotone" size="24" />
+					</button>
 				</h2>
 				Make: {data.longName}
 				<br />
