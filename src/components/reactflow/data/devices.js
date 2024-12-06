@@ -4,17 +4,13 @@ export const buildDeviceNodesFromArray = (
 	connectorTypes
 ) => {
 	let col = 0,
-		row = 0,
-		previousCategory = '',
-		previousHeightEstimate = 0;
+		previousCategory = '';
 
 	const nodes = devices
 		.sort((a, b) => a.deviceCategoryId.localeCompare(b.deviceCategoryId))
 		.map((device) => {
 			if (device.deviceCategoryId !== previousCategory) {
-				row = 0;
 				col += 1;
-				previousHeightEstimate = 0;
 			}
 
 			const deviceCategory = deviceCategories.find(
@@ -42,19 +38,11 @@ export const buildDeviceNodesFromArray = (
 				dragHandle: '.device__drag-handle',
 				position: {
 					x: col * 500,
-					y: row++ * previousHeightEstimate,
+					y: 0,
 				},
 			};
 
 			previousCategory = device.deviceCategoryId;
-			previousHeightEstimate =
-				225 +
-				Math.max(
-					device.connectors.inputs.length,
-					device.connectors.outputs.length
-				) *
-					20;
-			// 2: 100, 3: 112, 5: 140, 6: 153, 26: 430 --- 1 ~ 9px
 
 			return node;
 		});

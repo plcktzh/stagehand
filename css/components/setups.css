@@ -17,3 +17,19 @@
 	stroke: var(--color-offblack) !important;
 	stroke-width: 5 !important;
 }
+
+.react-flow__panel.react-flow__controls {
+	gap: var(--content-padding);
+
+	.react-flow__controls-button {
+		background-color: var(--color-paper);
+		border: none;
+		color: var(--color-tertiary);
+		transition: all var(--duration) ease-in-out;
+	}
+
+	button:not(.does-not-exist):hover {
+		background-color: var(--color-tertiary);
+		color: var(--color-paper);
+	}
+}

@@ -1,16 +1,19 @@
 import {
 	addEdge,
 	Background,
+	Controls,
+	MiniMap,
 	Panel,
 	ReactFlow,
 	reconnectEdge,
 	useEdgesState,
+	useNodesInitialized,
 	useNodesState,
 	useReactFlow,
 	useStoreApi,
 } from '@xyflow/react';
 import '@xyflow/react/dist/base.css';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { buildDeviceNodesFromArray } from './data/devices';
 import {
 	useConnectorTypesContext,
@@ -19,6 +22,8 @@ import {
 } from '../Stagehand';
 import DeviceNode from './DeviceNode';
 import { validateConnections } from './data/connections';
+
+const nodeClassName = (node) => node.type;
 
 export default function SetupsFlow() {
 	const devices = useDevicesContext();
@@ -37,12 +42,43 @@ export default function SetupsFlow() {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [rfInstance, setRfInstance] = useState(null);
-	const { setViewport, getInternalNode } = useReactFlow();
+	const { setViewport, getInternalNode, getNodes, updateNode } = useReactFlow();
+	const nodesInitialized = useNodesInitialized({ includeHiddenNodes: false });
 
 	const onConnect = useCallback(
 		(params) => setEdges((eds) => addEdge(params, eds)),
 		[setEdges]
 	);
+
+	useEffect(() => {
+		if (nodesInitialized) {
+			const nodes = getNodes();
+
+			let previousCategory,
+				previousNodePosition = 0,
+				previousNodeHeight = 0;
+
+			for (const node of nodes) {
+				if (previousCategory !== node.data.category.id) {
+					previousCategory = undefined;
+					previousNodePosition = 0;
+					previousNodeHeight = 0;
+				}
+				const newYPosition =
+					previousNodeHeight > 0
+						? previousNodePosition + previousNodeHeight + 50
+						: 0;
+
+				updateNode(node.id, {
+					position: { x: node.position.x, y: newYPosition },
+				});
+
+				previousCategory = node.data.category.id;
+				previousNodePosition = newYPosition;
+				previousNodeHeight = node.measured.height;
+			}
+		}
+	}, [nodesInitialized]);
 
 	const MIN_DISTANCE = 150;
 
@@ -227,6 +263,8 @@ export default function SetupsFlow() {
 				<button onClick={onSave}>Save Setup</button>
 				<button onClick={onLoad}>Load Setup</button>
 			</Panel>
+			<MiniMap zoomable pannable nodeClassName={nodeClassName} />
+			<Controls />
 		</ReactFlow>
 	);
 }
