@@ -48,8 +48,7 @@ export default function SetupsFlow() {
 	const [nodes, setNodes, onNodesChange] = useNodesState([]);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [rfInstance, setRfInstance] = useState(null);
-	const { setViewport, getInternalNode, getNodes, updateNode } = useReactFlow();
-	const nodesInitialized = useNodesInitialized({ includeHiddenNodes: false });
+	const { setViewport, getInternalNode } = useReactFlow();
 	const [selectedDevice, setSelectedDevice] = useState('');
 	const [setupName, setSetupName] = useState('Untitled Setup');
 	const [loadedSetup, setLoadedSetup] = useState('');
@@ -59,36 +58,6 @@ export default function SetupsFlow() {
 		(params) => setEdges((eds) => addEdge(params, eds)),
 		[setEdges]
 	);
-
-	useEffect(() => {
-		if (nodesInitialized) {
-			const nodes = getNodes();
-
-			let previousCategory,
-				previousNodePosition = 0,
-				previousNodeHeight = 0;
-
-			for (const node of nodes) {
-				if (previousCategory !== node.data.category.id) {
-					previousCategory = undefined;
-					previousNodePosition = 0;
-					previousNodeHeight = 0;
-				}
-				const newYPosition =
-					previousNodeHeight > 0
-						? previousNodePosition + previousNodeHeight + 50
-						: 0;
-
-				updateNode(node.id, {
-					position: { x: node.position.x, y: newYPosition },
-				});
-
-				previousCategory = node.data.category.id;
-				previousNodePosition = newYPosition;
-				previousNodeHeight = node.measured.height;
-			}
-		}
-	}, [nodesInitialized]);
 
 	const MIN_DISTANCE = 150;
 

@@ -41,8 +41,8 @@ export const buildDeviceNodesFromArray = (
                 type: 'device',
                 dragHandle: '.device__drag-handle',
                 position: {
-                    x: col * 500,
-                    y: 0,
+                    x: (Math.random() - .5) * window.innerWidth,
+                    y: (Math.random() - .5) * window.innerHeight,
                 },
             };
 
