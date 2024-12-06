@@ -38,7 +38,7 @@ export default function Home() {
 				<li>
 					Setups
 					<ul>
-						<li>
+						<li style={{textDecoration: 'line-through'}}>
 							Don't start with all devices on init - add a library component for
 							managing devices
 						</li>

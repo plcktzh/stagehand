@@ -19,7 +19,7 @@ Aside from that, this is (part of) what needs to be done still:
   * Add JSON import and export to all entities
   * Make everything customizable
 * Setups
-  * Don't start with all devices on init - add a library component for managing devices
+  * :heavy_check_mark: Don't start with all devices on init - add a library component for managing devices
   * Make saving/loading process more intuitive
   * Refine visuals (Include photos/drawings of devices?)
 * Devices, Device Categories, Connector Types, Data Types
