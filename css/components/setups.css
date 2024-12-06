@@ -33,3 +33,70 @@
 		color: var(--color-paper);
 	}
 }
+
+.setups__control-panel {
+	align-items: center;
+	background-color: var(--color-paper);
+	border-radius: var(--radius-1);
+	box-shadow: var(--shadow-4);
+	display: flex;
+	gap: var(--content-padding);
+	padding: var(--content-padding);
+
+	fieldset {
+		align-items: center;
+		border: none;
+		display: flex;
+		padding: 0;
+
+		&:focus-within {
+			outline: 3px solid var(--color-offblack);
+			outline-offset: 3px;
+		}
+
+		input,
+		select {
+			border-start-end-radius: 0;
+			border-end-end-radius: 0;
+			border-inline-end: none;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		button {
+			border-start-start-radius: 0;
+			border-end-start-radius: 0;
+		}
+	}
+
+	input,
+	select {
+		background-color: var(--color-paper);
+		border: 1px solid var(--gray-6);
+		border-radius: var(--radius-2);
+		font-size: var(--size-fluid-1);
+		height: 33px;
+	}
+
+	option {
+		font-family: var(--body-font);
+		font-size: var(--size-fluid-1);
+	}
+
+	button {
+		background-color: var(--color-tertiary);
+		border: none;
+		color: var(--color-paper);
+		cursor: pointer;
+		height: 33px;
+		padding: var(--space-3xs) var(--space-xs);
+		transition: all var(--duration) ease-in-out;
+	}
+
+	button:not(.does-not-exist):hover {
+		background-color: var(--color-paper);
+		color: var(--color-tertiary);
+	}
+}

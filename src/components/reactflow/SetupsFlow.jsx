@@ -22,6 +22,9 @@ import {
 } from '../Stagehand';
 import DeviceNode from './DeviceNode';
 import { validateConnections } from './data/connections';
+import { FloppyDisk, FolderOpen } from '@phosphor-icons/react';
+import { db, fetchSetups } from '../../services/db';
+import { useLiveQuery } from 'dexie-react-hooks';
 
 const nodeClassName = (node) => node.type;
 
@@ -44,6 +47,9 @@ export default function SetupsFlow() {
 	const [rfInstance, setRfInstance] = useState(null);
 	const { setViewport, getInternalNode, getNodes, updateNode } = useReactFlow();
 	const nodesInitialized = useNodesInitialized({ includeHiddenNodes: false });
+	const [setupName, setSetupName] = useState('Untitled Setup');
+	const [loadedSetup, setLoadedSetup] = useState('');
+	const savedSetups = useLiveQuery(fetchSetups, []);
 
 	const onConnect = useCallback(
 		(params) => setEdges((eds) => addEdge(params, eds)),
@@ -219,24 +225,33 @@ export default function SetupsFlow() {
 
 	const onSave = useCallback(() => {
 		if (rfInstance) {
-			const flow = rfInstance.toObject();
-			localStorage.setItem('stagehand_temp', JSON.stringify(flow));
+			// const flow = rfInstance.toObject();
+			// localStorage.setItem('stagehand_temp', JSON.stringify(flow));
+			db.setups.put({
+				date: new Date().toUTCString(),
+				name: setupName,
+				configuration: JSON.stringify(rfInstance.toObject()),
+			});
 		}
-	}, [rfInstance]);
+	}, [rfInstance, setupName]);
 
 	const onLoad = useCallback(() => {
 		const restoreFlow = async () => {
-			const flow = JSON.parse(localStorage.getItem('stagehand_temp'));
+			const setup = await db.setups.get({ date: loadedSetup });
+			const flow = JSON.parse(setup.configuration);
+
 			if (flow) {
 				const { x = 0, y = 0, zoom = 1 } = flow.viewport;
 				setNodes(flow.nodes || []);
 				setEdges(flow.edges || []);
 				setViewport({ x, y, zoom });
+
+				setSetupName(setup.name);
 			}
 		};
 
-		restoreFlow();
-	}, [setNodes, setEdges, setViewport]);
+		if (loadedSetup !== '') restoreFlow();
+	}, [setNodes, setEdges, setViewport, setSetupName, loadedSetup]);
 
 	return (
 		<ReactFlow
@@ -259,9 +274,42 @@ export default function SetupsFlow() {
 			snapToGrid={true}
 		>
 			<Background />
-			<Panel position="top-right">
-				<button onClick={onSave}>Save Setup</button>
-				<button onClick={onLoad}>Load Setup</button>
+			<Panel position="top-right" className="setups__control-panel">
+				<fieldset>
+					<label htmlFor="name" hidden>
+						Name:
+					</label>
+					<input
+						type="text"
+						id="name"
+						value={setupName}
+						onChange={(e) => setSetupName(e.target.value)}
+					/>
+					<button onClick={onSave} aria-label="Save Setup">
+						<FloppyDisk weight="duotone" size="16" />
+					</button>
+				</fieldset>
+				<fieldset>
+					<label htmlFor="savedSetups" hidden>
+						Saved Setups:
+					</label>
+					<select
+						id="savedSetups"
+						defaultValue={loadedSetup}
+						onChange={(e) => setLoadedSetup(e.target.value)}
+					>
+						<option value="">Choose a saved setup ...</option>
+						{savedSetups &&
+							savedSetups.map((setup) => (
+								<option key={`${setup.name}_${setup.date}`} value={setup.date}>
+									{setup.name} ({setup.date})
+								</option>
+							))}
+					</select>
+					<button onClick={onLoad} aria-label="Load Setup">
+						<FolderOpen weight="duotone" size="16" />
+					</button>
+				</fieldset>
 			</Panel>
 			<MiniMap zoomable pannable nodeClassName={nodeClassName} />
 			<Controls />

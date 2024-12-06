@@ -4,7 +4,6 @@ import {
 	fetchDataTypes,
 	fetchDeviceCategories,
 	fetchDevices,
-	fetchSetups,
 	initDb,
 } from '../services/db';
 import { Route } from 'wouter';
@@ -23,7 +22,6 @@ const DeviceCategoriesContext = createContext(null);
 const DataTypesContext = createContext(null);
 const ConnectorTypesContext = createContext(null);
 const DevicesContext = createContext(null);
-const SetupsContext = createContext(null);
 
 export function useDeviceCategoriesContext() {
 	return useContext(DeviceCategoriesContext);
@@ -41,10 +39,6 @@ export function useDevicesContext() {
 	return useContext(DevicesContext);
 }
 
-export function useSetupsContext() {
-	return useContext(SetupsContext);
-}
-
 export default function Stagehand() {
 	const {
 		data: dbInitialized = false,
@@ -58,7 +52,6 @@ export default function Stagehand() {
 	const dataTypes = useLiveQuery(fetchDataTypes, []);
 	const connectorTypes = useLiveQuery(fetchConnectorTypes, []);
 	const devices = useLiveQuery(fetchDevices, []);
-	const setups = useLiveQuery(fetchSetups, []);
 
 	return (
 		<Fragment>
@@ -77,33 +70,21 @@ export default function Stagehand() {
 													<Fragment>
 														{devices && (
 															<DevicesContext.Provider value={devices}>
-																<Fragment>
-																	{setups && (
-																		<SetupsContext.Provider value={setups}>
-																			<Route path="/" component={Home} />
-																			<Route
-																				path="/setups"
-																				component={Setups}
-																			/>
-																			<Route
-																				path="/devices"
-																				component={Devices}
-																			/>
-																			<Route
-																				path="/device-categories"
-																				component={DeviceCategories}
-																			/>
-																			<Route
-																				path="/connector-types"
-																				component={ConnectorTypes}
-																			/>
-																			<Route
-																				path="/data-types"
-																				component={DataTypes}
-																			/>
-																		</SetupsContext.Provider>
-																	)}
-																</Fragment>
+																<Route path="/" component={Home} />
+																<Route path="/setups" component={Setups} />
+																<Route path="/devices" component={Devices} />
+																<Route
+																	path="/device-categories"
+																	component={DeviceCategories}
+																/>
+																<Route
+																	path="/connector-types"
+																	component={ConnectorTypes}
+																/>
+																<Route
+																	path="/data-types"
+																	component={DataTypes}
+																/>
 															</DevicesContext.Provider>
 														)}
 													</Fragment>

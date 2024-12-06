@@ -8,6 +8,7 @@ db.version(1).stores({
 	dataTypes: `id, name, specs`,
 	deviceCategories: `id, name, icon`,
 	devices: `id, name, deviceCategoryId, make, connectors`,
+	setups: `date, name, configuration`,
 });
 
 // Add initial JSON data to database tables
@@ -85,5 +86,6 @@ export const fetchDeviceCategories = async () => {
 
 // Fetch all Setups and return them as an Array
 export const fetchSetups = async () => {
-	return [];
+	const setups = await fetchAllAsArray({ queryKey: ['setups'] });
+	return setups;
 };
