@@ -209,17 +209,17 @@ export default function SetupsFlow() {
 			const output = devices
 				.find(({ id }) => id === source)
 				.connectors.outputs.find(({ id }) => id === sourceHandle);
-			output.connectorType = connectorTypes.find(
+			if (output) output.connectorType = connectorTypes.find(
 				({ id }) => id === output.connectorTypeId
 			);
 			const input = devices
 				.find(({ id }) => id === target)
 				.connectors.inputs.find(({ id }) => id === targetHandle);
-			input.connectorType = connectorTypes.find(
+			if (input) input.connectorType = connectorTypes.find(
 				({ id }) => id === input.connectorTypeId
 			);
 
-			return validateConnections(output, input);
+			return source !== target && validateConnections(output, input);
 		}
 	);
 
@@ -300,9 +300,9 @@ export default function SetupsFlow() {
 					>
 						<option value="">Choose a saved setup ...</option>
 						{savedSetups &&
-							savedSetups.map((setup) => (
+							savedSetups.sort((a, b) => b.date > a.date).map((setup) => (
 								<option key={`${setup.name}_${setup.date}`} value={setup.date}>
-									{setup.name} ({setup.date})
+									{setup.date} – {setup.name}
 								</option>
 							))}
 					</select>
